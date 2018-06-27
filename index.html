@@ -121,7 +121,7 @@
                     <p class="p_text"> 
                         Her sürüm için detaylı sürüm notları <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>'da mevcuttur.
                     </p>
-                    <h2 id="vue-gelistirici-araclari" style="margin: 64px 0 20px 0;">
+                    <h2 id="vue-gelistirici-araclari" class="h_2">
                         <a href="#vue-gelistirici-araclari" title="Vue-Gelistirici-Araclariaclari">Vue Geliştirici Araçları</a>
                     </h2>
                     <hr>
@@ -129,7 +129,7 @@
                         Vue kullanırken, <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a>'u tarayıcınıza 
                         yüklemenizi ve Vue uygulamalarınızı daha kullanıcı dostu bir arayüzde incelemenizi ve daha kolay hata ayıklamanızı öneririz.
                     </p>
-                    <h2 id="Doğrudan-lt-script-gt-Ekle" style="margin: 64px 0 20px 0;">
+                    <h2 id="Doğrudan-lt-script-gt-Ekle" class="h_2">
                         <a href="#Doğrudan-lt-script-gt-Ekle" title="Dogrudan-&lt;script&gt;-Ekle">Doğrudan &lt;script&gt; Ekle</a>
                     </h2>
                     <hr>
@@ -157,7 +157,87 @@
                     <p class="p_text">
                             Manuel olarak güncelleyebileceğiniz belirli bir sürüm numarasına bağlantı oluşturmanızı öneririz:
                     </p>
+                    <figure class="highlight">
+                        <table class="t">
+                            <tbody>
+                                <tr>
+                                    <td class="code">
+                                        <pre>
+                                            <span class="line">
+                                                <span class="tag">
+                                                    <span class="name"><</span><span class="name">script</span><span class="attrbt">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"</span>></span><span class="tag"><span class="name"><</span><span class="name">/</span><span class="name">script></span> 
+                                                </span>
+                                            </span>
+                                            <br>
+                                        </pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                    <p class="p_text">
+                        NPM paketinin kaynağına <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a> adresinden göz atabilirsiniz.
+                    </p>
+                    <p class="p_text">
+                        <a href="#Explanation-of-Different-Builds">Vue'nin farklı yapılarını</a> okuduğunuzdan ve <strong>üretim versiyonunu</strong> kullandığınızdan emin olun. 
+                        Yayımlanan sitenizdeki, <code>vue.js</code> dosyasını <code>vue.min.js.</code> ile değiştirin 
+                        Bu, geliştirme deneyimi yerine hız için optimize edilmiş daha küçük bir yapıdır.
+                    </p>
+                    <h2 id="NPM" class="h_2"><a href="#NPM" title="NPM" data-scroll="">NPM</a></h2>
+                    <hr>
+                    <p class="p_text">
+                        Vue ile büyük ölçekli uygulamalar oluştururken NPM, önerilen kurulum yöntemidir. 
+                        <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack</a> veya <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a> gibi modül grupları ile güzelce eşleşir.
+                        Vue ayrıca <a href="single-file-components.html">Tek Dosya Bileşenlerinin </a> yazılması için eşlik eden araçlar sağlar.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                                <span class="line">$ npm install vue </span>
+                        </div>
+                    </div>
+                    <h2 id="farkli-yapilarin-tanimlanmasi" class="h_2"><a href="#farkli-yapilarin-tanimlanmasi"  title="farkli-yapilarin-tanimlanmasi" data-scroll="">Farklı Yapıların Tanımlanması</a></h2>
+                    <hr>
+                    <p class="p_text">
+                            <a href="https://cdn.jsdelivr.net/npm/vue/dist/" target="_blank" rel="noopener">NPM paketinin <code>dist/</code> dizininde</a> Vue.js.'nin birçok farklı yapısını bulacaksınız.
+                    </p>
+                    <p class="p_text">Aralarındaki farka bir bakalım :</p>
+                    <table class="tablo">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>UMD</th>
+                                <th>CommmonJS</th>
+                                <th>ES Modülü</th>
+                            </tr>
+                            <tbdoy class="tbdy">
+                                <tr>
+                                    <td><strong>Tam</strong></td>
+                                    <td>vue.js</td>
+                                    <td>vue.common.js</td>
+                                    <td>vue.esm.js</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Runtime-only</strong></td>
+                                    <td>vue.runtime.js</td>
+                                    <td>vue.runtime.common.js</td>
+                                    <td>vue.runtime.esm.js</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tam(Üretim)</strong></td>
+                                    <td>vue.min.js</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Runtime-only(Üretim)</strong></td>
+                                    <td>vue.runtime.min.js</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbdoy>
 
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>

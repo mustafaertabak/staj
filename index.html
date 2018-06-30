@@ -76,7 +76,7 @@
                                         <a class="section-link" data-scroll="" href="#Terimler">Terimler</a>
                                     </li>
                                     <li>
-                                        <a class="section-link" data-scroll="" href="#Derleyici-calisma-zamani-ve-yalniz-calsma-zamani">Derleyici Çalışma Zamanı ve Yalnız Çalışma Zamanı</a>
+                                        <a class="section-link" data-scroll="" href="#Derleyici-runtime-ve-Runtime-only">Derleyici+Runtime ve Runtime-only</a>
                                     </li>
                                     <li>
                                         <a class="section-link" data-scroll="" href="#Geliştirme-ve-Uretim-Modu">Geliştirme ve Üretim Modu</a>
@@ -262,8 +262,104 @@
                                 adresindeki jsDelivr CDN'deki varsayılan dosya, Runtime + Derleyici UMD yapısıdır (<code>vue.js</code>).
                             </p>
                         </li>
-                        
+                        <li class="li_p">
+                            <p class="p_text">
+                                <strong><a href="http://wiki.commonjs.org/wiki/Modules/1.1" target="_blank" rel="noopener">CommonJS</a></strong>
+                                : CommonJS yapıları, <a href="http://browserify.org/" target="_blank" rel="noopener">browserify</a> veya
+                                <a href="https://webpack.github.io" target="_blank" rel="noopener">webpack 1</a> gibi eski gruplarla kullanım için tasarlanmıştır. Bu grupların varsayılan dosyası 
+                                (<code>pkg.main</code>), yalnızca Çalışma Zamanı CommonJS yapısıdır(<code>vue.runtime.common.js</code>).
+                            </p>
+                        </li>
+                        <li class="li_p">
+                            <p class="p_text">
+                                <strong><a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="noopener">ES Module</a></strong>
+                                : ES modül yapıları, <a href="https://webpack.js.org" target="_blank" rel="noopener">webpack 2</a> ya da 
+                                <a href="https://rollupjs.org/" target="_blank" rel="noopener">rollup</a>
+                                gibi modern paketlerle kullanılmak üzere tasarlanmıştır. Bu paketleyiciler için varsayılan dosya (<code>pkg.module</code>),
+                                 yalnızca Çalışma Zamanı CommonJS yapısıdır (<code>vue.runtime.esm.js</code>).
+                            </p>
+                        </li>
                     </ul>
+                    <h3 id="Derleyici-runtime-ve-Runtime-only" class="h3_c">
+                            <a href="#Derleyici-runtime-ve-Runtime-only" class="baslik-link" title="Derleyici-runtime-ve-Runtime-only" data-scroll=""> Runtime+Derleyici ve Runtime-only</a>
+                    </h3>
+                    <p class="p_text">
+                            İstemcide şablon derlemeniz gerekiyorsa, derleyiciye ve dolayısıyla tam yapısına ihtiyacınız olacak:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">// Bu derleyici gerektirir </span>
+                            <br>
+                            <span class="line">
+                                    <span class="keyword">new</span>
+                                    vue({
+                            </span>
+                            <br>
+                            <span class="line in-line">
+                                template:  
+                                <span class="string"> '&lt;div&gt;{{ hi }}&lt;/div&gt;'</span>
+                            </span>
+                            <br>
+                            <span class="line">})</span>
+                            <br>
+                            <span class="line"></span>
+                            <br>
+                            <span class="aciklama_satiri">// Bu gerektirmez</span>
+                            <br>
+                            <span class="line">
+                                    <span class="keyword">new</span>
+                                    vue({
+                            </span>
+                            <br>
+                            <span class="line in-line">render (h) {</span>
+                            <br>
+                            <span class="line in-line2"><span class="keyword">return</span>
+                            h(<span class="string">'div'</span>, <span class="keyword">this</span>.hi)
+                            </span>
+                            <br>
+                            <span class="line in-line">}</span>
+                            <br>
+                            <span class="line">})</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        <code>vue-loader</code> veya <code>vueify</code> kullanırken, <code>*.vue</code>
+                        dosyalarındaki şablonlar derleme zamanında JavaScript'e derlenir. Derleyiciye 
+                        son pakette gerçekten ihtiyacınız yok ve bu nedenle Runtime-only kullanabilirsiniz.
+                    </p>
+                    <p class="p_text">
+                            Runtime-only oluşturma özellikleri, tam olarak oluşturulmuş muadillerine göre kabaca 
+                            %30 daha hafif olduklarından, bunu her fırsatta kullanmalısınız. Bunun yerine tam yapıyı 
+                            kullanmak istiyorsanız, paketleyicinizde bir takma ad yapılandırmanız gerekir:
+                    </p>
+                    <h4 id="Webpack" class="h4_c">
+                            <a href="#Webpack" class="headerlink" title="Webpack"></a>
+                            Webpack
+                    </h4>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="string">module</span>.exports = {
+                            <br>
+                            <span class="aciklama_satiri in-line">//...</span>
+                            <br>
+                            <span class="line in-line">resolve: {</span>
+                            <br>
+                            <span class="line in-line2">alias: {</span>
+                            <br>
+                            <span class="line in-line3">
+                                <span class="string">'vue$'</span>
+                                :
+                                <span class="string">'vue/dist/vue.esm.js'</span>
+                                <span class="aciklama_satiri">// Webpack 1 için 'vue/dist/vue.common.js' </span>
+                            </span>
+                            <br>
+                            <span class="line in-line2">}</span>
+                            <br>
+                            <span class="line in-line">}</span>
+                            <br>
+                            <span class="line">}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

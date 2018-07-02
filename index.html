@@ -47,6 +47,7 @@
                         
                     </div>
                     <h2>Kılavuz</h2>
+                    <!-- SOL MENÜ İÇERİK -->
                     <ul class="side_menu">
                         <li>
                             <h3>Gerekenler</h3>
@@ -76,17 +77,17 @@
                                         <a class="section-link" data-scroll="" href="#Terimler">Terimler</a>
                                     </li>
                                     <li>
-                                        <a class="section-link" data-scroll="" href="#Derleyici-runtime-ve-Runtime-only">Derleyici+Runtime ve Runtime-only</a>
+                                        <a class="section-link" data-scroll="" href="#Derleyici-runtime-ve-Runtime-only">Runtime+Derleyici ve Runtime-only</a>
                                     </li>
                                     <li>
                                         <a class="section-link" data-scroll="" href="#Geliştirme-ve-Uretim-Modu">Geliştirme ve Üretim Modu</a>
                                     </li>
                                     <li>
-                                        <a class="section-link" data-scroll="" href="#CSP-ortamları">CSP Ortamları</a>
+                                        <a class="section-link" data-scroll="" href="#CSP-ortamlari">CSP Ortamları</a>
                                     </li>
                                 </ul>
                                 <li>
-                                    <a class="section-link" data-scroll="" href="#Dev-Build">Dev Yapısı</a>
+                                    <a class="section-link" data-scroll="" href="#Dev-yapisi">Dev Yapısı</a>
                                 </li>
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Bower">Bower</a>
@@ -97,6 +98,7 @@
                             </ul>
                         </li>
                     </ul>
+                    <!-- SOL MENÜ İÇERİK -->
                 </div>
             </div> 
             <div class="content">
@@ -157,24 +159,13 @@
                     <p class="p_text">
                             Manuel olarak güncelleyebileceğiniz belirli bir sürüm numarasına bağlantı oluşturmanızı öneririz:
                     </p>
-                    <figure class="highlight">
-                        <table class="t">
-                            <tbody>
-                                <tr>
-                                    <td class="code">
-                                        <pre>
-                                            <span class="line">
-                                                <span class="tag">
-                                                    <span class="name"><</span><span class="name">script</span><span class="attrbt">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"</span>></span><span class="tag"><span class="name"><</span><span class="name">/</span><span class="name">script></span> 
-                                                </span>
-                                            </span>
-                                            <br>
-                                        </pre>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    <div class="table">
+                        <div class="tbody" >
+                            <span class="tag">&lt;script src=</span>
+                            <span class="string">"https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"</span>
+                            <span class="tag">&gt;&lt;script&gt;</span>
+                        </div>
+                    </div>
                     <p class="p_text">
                         NPM paketinin kaynağına <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a> adresinden göz atabilirsiniz.
                     </p>
@@ -201,6 +192,7 @@
                             <a href="https://cdn.jsdelivr.net/npm/vue/dist/" target="_blank" rel="noopener">NPM paketinin <code>dist/</code> dizininde</a> Vue.js.'nin birçok farklı yapısını bulacaksınız.
                     </p>
                     <p class="p_text">Aralarındaki farka bir bakalım :</p>
+                    <!-- FARKLI YAPILARIN TANIMLANMASI TABLO -->
                     <table class="tablo">
                         <thead>
                             <tr>
@@ -237,6 +229,8 @@
                             </tbdoy>
                         </thead>
                     </table>
+                    <!-- FARKLI YAPILARIN TANIMLANMASI TABLO -->
+                    <!-- TERİMLER LİST -->
                     <h3 id="Terimler" class="h3_c">
                         <a href="#Terimler" class="baslik-link" title="Terimler" data-scroll="">
                             Terimler
@@ -280,6 +274,7 @@
                             </p>
                         </li>
                     </ul>
+                    <!-- TERİMLER LİST -->
                     <h3 id="Derleyici-runtime-ve-Runtime-only" class="h3_c">
                             <a href="#Derleyici-runtime-ve-Runtime-only" class="baslik-link" title="Derleyici-runtime-ve-Runtime-only" data-scroll=""> Runtime+Derleyici ve Runtime-only</a>
                     </h3>
@@ -332,8 +327,9 @@
                             %30 daha hafif olduklarından, bunu her fırsatta kullanmalısınız. Bunun yerine tam yapıyı 
                             kullanmak istiyorsanız, paketleyicinizde bir takma ad yapılandırmanız gerekir:
                     </p>
+                    <!-- WEBPACK ÖRNEK -->
                     <h4 id="Webpack" class="h4_c">
-                            <a href="#Webpack" class="headerlink" title="Webpack"></a>
+                            <a href="#Webpack" title="Webpack"></a>
                             Webpack
                     </h4>
                     <div class="table">
@@ -360,6 +356,248 @@
                             <span class="line">}</span>
                         </div>
                     </div>
+                    <!-- WEBPACK ÖRNEK -->
+                    <!-- ROLLUP ÖRNEK -->
+                    <h4 id="Rollup" class="h4_c">
+                        <a href="#Rollup" title="Rollup"></a>
+                        Rollup
+                    </h4>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="line">
+                                <span class="keyword">const </span>
+                                alias = 
+                                <span class="string">require</span>(
+                                <span class="string">'toplayicinin-takma-adi'</span>
+                                )
+                            </span>
+                            <br>
+                            <br>
+                            rollup({
+                            <br>
+                            <span class="aciklama_satiri in-line">//...</span>
+                            <br>
+                            <span class="in-line">plugins: [</span>
+                            <br>
+                            <span class="in-line2">alias({</span>
+                            <br>
+                            <span class="in-line3 string">'vue'</span><span class="string"> 'vue/dist/vue.esm.js'</span>
+                            <br>
+                            <span class="in-line2">})</span>
+                            <br>
+                            <span class="in-line">]</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <!-- ROLLUP ÖRNEK -->
+                    <!-- BROWSERIFY ÖRNEK -->
+                    <h4 id="Browserify" class="h4_c">
+                        <a href="#Browserify"  title="Browserify"></a>
+                        Browserify
+                    </h4>
+                    <p class="p_text"><code>package.json</code>'ı projenize ekleyin:</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="line">{</span>
+                            <br>
+                            <span class="aciklama_satiri in-line">//...</span>
+                            <br>
+                            <span class="string in-line">"tarayici"</span>
+                            : {
+                            <br>
+                            <span class="string in-line2">"vue"</span>: 
+                            <span class="string">"vue/dist/vue.common.js"</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            }
+                        </div>
+                    </div>
+                    <!-- BROWSERIFY ÖRNEK -->
+                    <!-- PARCEL ÖRNEK -->
+                    <h4 id="Parcel" class="h4_c">
+                        <a href="#Parcel"  title="Parcel"></a>
+                        Parcel
+                    </h4>
+                    <p class="p_text"><code>package.json</code>'ı projenize ekleyin:</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="line">{</span>
+                            <br>
+                            <span class="aciklama_satiri in-line">//...</span>
+                            <br>
+                            <span class="string in-line">"alias"</span>
+                            : {
+                            <br>
+                            <span class="string in-line2">"vue"</span>: 
+                            <span class="string">"./node_modules/vue/dist/vue.common.js"</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            }
+                        </div>
+                    </div>
+                    <!-- PARCEL ÖRNEK -->
+                    <h3 id="Geliştirme-ve-Uretim-Modu" class="h3_c">
+                        <a href="#Geliştirme-ve-Uretim-Modu" class="baslik-link"   title="Geliştirme-ve-Uretim-Modu" data-scroll="">Geliştirme ve Üretim Modu</a>
+                    </h3>
+                    <p class="p_text">Geliştirme / üretim modları UMD için sabit kodlanmıştır: 
+                        minimilize edilmemiş dosyalar geliştirme içindir ve minimilize edilmiş 
+                        dosyalar üretim içindir.
+                    </p>
+                    <p class="p_text">
+                            CommonJS ve ES Modülü yapıları, paketleyiciler için tasarlanmıştır, 
+                            bu nedenle bunlar için küçültülmüş sürümler sağlarız. Son paketi 
+                            kendiniz küçültmekten siz sorumlu olacaksınız. 
+                    </p>
+                    <h4 id="Webpack-1" class="h4_c">
+                            <a href="#Webpack-1"  title="Webpack"></a>
+                            Webpack
+                    </h4>
+                    <p class="p_text">Webpack 4+'da, <code>mod</code> seçeneği kullanabilirsiniz.</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="string">module</span>.exports={
+                            <br>
+                            <span class="line in-line">mode:</span><span class="string">'uretim'</span>
+                            <br>
+                            }
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Ama Webpack 3 ve daha önceki sürümlerinde, 
+                        <a href="https://webpack.js.org/plugins/define-plugin/" target="_blank" rel="noopener">DefinePlugin</a>'i 
+                        kullanmanız gerekir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var</span> webpack = 
+                            <span class="string">require</span>(
+                            <span class="string">'webpack'</span>)
+                            <br>
+                            <br>
+                            <span class="string">module</span>.exports = {
+                            <br>
+                            <span class="in-line aciklama_satiri">//...</span>
+                            <br>
+                            <span class="line in-line">plugins: [</span>
+                            <br>
+                            <span class="in-line2 aciklama_satiri">//...</span>
+                            <br>
+                            <span class="in-line2 keyword">new </span>webpack.DefinePlugin({
+                            <br>
+                            <span class="in-line3 string">'process.env'</span>: {
+                            <br>
+                            <span class="in-line4">NODE_ENV: </span>
+                            <span class="string">JSON</span>
+                            <span class="line">.stringify</span>(
+                                <span class="string">'uretim'</span>)
+                            <br>
+                            <span class="in-line3">}</span> 
+                            <br> 
+                            <span class="in-line2">})</span>   
+                            <br> 
+                            <span class="in-line">}</span>
+                            <br> 
+                            }
+                        </div>
+                    </div>
+                    <h4 id="Rollup-1" class="h4_c">
+                            <a href="#Rollup-1"  title="Rollup"></a>
+                            Rollup
+                    </h4>
+                    <p class="p_text"><a href="https://github.com/rollup/rollup-plugin-replace" target="_blank" rel="noopener">rollup-plugin-replace </a> kullanın.</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">const</span> replace = 
+                            <span class="string">require</span>(<span class="string">'rollup-plugin-replace</span>)
+                            <br>
+                            <br>
+                            rollup({
+                            <br>
+                            <span class="in-line aciklama_satiri">//...</span>
+                            <br>
+                            <span class="in-line">plugins: [</span>
+                            <br>
+                            <span class="in-line2">replace({</span>
+                            <br>
+                            <span class="in-line3 string">'process.env.NODE_ENV'</span>: 
+                            <span class="string">JSON</span>.stringify(<span class="string">'uretim'</span>)
+                            <br>
+                            <span class="in-line2">})</span>
+                            <br>
+                            <span class="in-line">]</span>
+                            <br>
+                            }).then(...)
+                        </div>
+                    </div>
+                    <h4 id="Browserify-1">
+                            <a href="#Browserify-1"  title="Browserify"></a>
+                            Browserify
+                    </h4>
+                    <p class="p_text" class="h4_c">
+                            Global <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a> dönüşümünü paketinize uygulayın.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="line sz">NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m &gt; build.js</span>
+                        </div>
+                    </div>
+                    <p class="p_text">Ayrıca bkz. <a href="deployment.html">Üretim Dağıtım İpuçları</a>.</p>
+                    <h3 id="CSP-ortamlari" class="h3_c">
+                            <a href="#CSP-ortamlari" class="baslik-link" title="CSP ortamlari" data-scroll="">CSP ortamları</a>
+                    </h3>
+                    <p class="p_text">
+                        Google Chrome Uygulamaları gibi bazı ortamlarda, 
+                        içeriklerin değerlendirilmesi için <code>yeni Function()</code> 
+                        işlevinin kullanılmasını yasaklayan İçerik Güvenliği 
+                        Politikası (CSP) uygulanmaktadır. Tam yapı, şablonların 
+                        derlenmesi için bu özelliğe bağlıdır, bu nedenle bu ortamlarda kullanılamaz.
+                    </p>
+                    <p class="p_text">
+                            Öte yandan, yalnızca çalışma zamanı yapısı tamamen CSP uyumludur. 
+                            <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="noopener">Webpack + vue-loader</a> 
+                            veya 
+                            <a href="https://github.com/vuejs-templates/browserify-simple" target="_blank" rel="noopener">Browserify + vueify</a> ile çalışma zamanı 
+                            oluşturmayı kullanırken, şablonlarınız CSP ortamlarında mükemmel 
+                            şekilde çalışan <code>render</code> işlevleri haline getirilecektir.
+                    </p>
+                    <h2 id="Dev-yapisi" class="h_2">
+                            <a href="#Dev-Build" class="headerlink" title="Dev Build" data-scroll="">Dev Yapısı</a>
+                    </h2> <hr>
+                    <p class="p_text">
+                        <strong>Önemli: </strong>
+                        GitHub'un <code>/dist</code>
+                        klasöründeki yerleşik dosyalar yalnızca sürümler sırasında kontrol edilir. GitHub'daki 
+                        en yeni kaynak kodundan Vue kullanmak için, bunu kendiniz oluşturmanız gerekir!
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            git 
+                            <span class="string">clone</span> 
+                            https://github.com/vuejs/vue.git node_modules/vue
+                            <br>
+                            <span class="string">cd</span> node_modules/vue <br>
+                            npm install <br>
+                            npm run build
+                        </div>
+                    </div>
+                    <h2 id="Bower" class="h_2">
+                            <a href="#Bower" title="Bower" data-scroll="">Bower</a>
+                    </h2>
+                    <hr>
+                    <p class="p_text">Sadece UMD yapıları Bower'dan temin edilebilir.</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="line">$ bower install vue</span>
+                        </div>
+                    </div>
+                    <h2 id="AMD-Module-Yukleyicileri" class="h_2">
+                        <a href="#AMD-Module-Yukleyicileri" title="AMD-Module-Yukleyicileri" data-scroll="">AMD Module Loaders</a>
+                    </h2>
+                    <hr>
+                    <p class="p_text">Tüm UMD yapıları doğrudan bir AMD modülü olarak kullanılabilir.</p>
                 </div>
             </div>
         </div>

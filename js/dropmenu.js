@@ -1,17 +1,13 @@
 function dropmenu() {
-    document.getElementById("menucon").classList.toggle("show");
+    document.getElementById("menucon").classList.add("show");
+    document.getElementById("menucon-giris").classList.remove("show");
+    document.getElementById("kurulum").classList.add("show");
 }
 
-window.onclick = function(event) {
-  if (!event.target.matches('.sidebar-link')) {
-
-    var dropdowns = document.getElementsByClassName("menu-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
+function dropmenu_giris() {
+  document.getElementById("menucon-giris").classList.add("show");
+  document.getElementById("menucon").classList.remove("show");
 }
+
+
+

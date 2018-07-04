@@ -350,7 +350,8 @@ code {
   background-color: #f8f8f8;
   position: relative;
   border-bottom-right-radius: 2px;
-  border-top-right-radius: 2px; }
+  border-top-right-radius: 2px;
+  line-height: 25px; }
 
 .tip:before {
   content: "!";
@@ -392,10 +393,6 @@ code {
   color: #7f8c8d; }
 
 /* ------------------------------- */
-.kurulum figure {
-  margin: 19.2px 0;
-  display: block; }
-
 .highlight {
   overflow-x: auto;
   background-color: #f8f8f8;
@@ -508,6 +505,26 @@ td, th {
   font-size: 11.5px; }
 
 /* Code renklendirme sınıfları tasarımlar ve sairler. */
+/* Giris Sayfası css özellikleri */
+.giris h2 {
+  margin: 45px 0 0.8em;
+  padding-bottom: 0.7em;
+  border-bottom: 1px solid #ddd; }
+
+/* Giris Sayfası css özellikleri */
+.boslink {
+  width: 100%;
+  height: 100%;
+  background-color: #d3d3d3;
+  margin-top: 250px;
+  font-size: 65pt;
+  text-align: center;
+  line-height: 400px;
+  font-weight: bold; }
+
+.hidden {
+  display: none !important; }
+
 .show {
   display: block !important; }
 

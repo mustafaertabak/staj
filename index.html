@@ -658,6 +658,66 @@
                         <a href="https://gist.githubusercontent.com/chrisvfritz/7f8d7d63000b48493c336e48b3db3e52/raw/ed60c4e5d5c6fec48b0921edaed0cb60be30e87c/index.html" target="_blank" download="ornek1.html">Bir <code>index.html</code> dosyası oluşturabilir</a>
                         ve aşağıdakileri içeren bir Vue ekleyebilirsiniz:  
                     </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">&lt;!-- geliştirme sürümü yararlı konsol uyarıları içerir --&gt;</span>
+                            <br>
+                            <span class="tag">&lt;script src=</span><span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span><span class="tag">&gt;&lt;script&gt;</span>
+                        </div>
+                    </div>
+                    <span class="line">ya da:</span>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">&lt;!-- Boyutu ve hızı optimize edilmiş üretim versiyonu  --&gt;</span>
+                            <br>
+                            <span class="tag">&lt;script src=</span><span class="string">"https://cdn.jsdelivr.net/npm/vue"</span><span class="tag">&gt;&lt;script&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        <span class="string">Kurulum</span> sayfası, Vue'yi yüklemek için daha fazla seçenek sunar. Not: Yeni 
+                        başlayanların özellikle Node.js tabanlı oluşturma araçlarına henüz aşina 
+                        değilseniz, <code>vue-cli</code> ile <strong>başlamanızı önermiyoruz</strong>.
+                    </p>
+                    <h2 id="Tanimlama">İşlem Tanımlama</h2>
+                    <div class="scrimba">
+                        <a href="https://scrimba.com/p/pXKqta/cQ3QVcr" target="_blank">Bu dersi Scrimba'da dene</a>
+                    </div>
+                    <p class="p_text">
+                        Vue.js’in çekirdeği, basit şablon sözdizimini kullanarak 
+                        DOM’daki verilere bildirimde bulunmamızı sağlayan bir sistemdir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=</span><span class="string">"app"</span><span class="tag">&gt;</span>
+                            <br>
+                            <span class="in-line">{{ mesaj }}</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var</span>
+                            app
+                            =
+                            <span class="keyword">new</span>
+                            Vue({
+                            <br>
+                            <span class="in-line">el:</span>
+                            <span class="string">'#app'</span>
+                            ,
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">mesaj:</span>
+                            <span class="string">'Merhaba Vue!'</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

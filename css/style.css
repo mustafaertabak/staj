@@ -260,6 +260,8 @@ h1, h2, h3, h4, strong {
   padding: 33px 0 33px 50px;
   max-width: 600px;
   margin: 0 auto; }
+  .content img {
+    max-width: 100%; }
 
 .sponsor {
   width: 125px; }
@@ -512,6 +514,22 @@ td, th {
   border-bottom: 1px solid #ddd; }
 
 /* Giris Sayfası css özellikleri */
+.bit {
+  color: #ae81ff; }
+
+.fnc {
+  color: #0092db; }
+
+.demo {
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 25px 35px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  user-select: none; }
+
 .scrimba {
   background-color: #e7ecf3;
   padding: 1em 1.25em;

@@ -246,22 +246,6 @@ h1, h2, h3, h4, strong
 .sidebar-link:focus
     color: #42b983
     font-weight: bold
-.sidebar .menu-content, .menu-content-giris
-    font-size: 12px
-    display: none
-.sidebar .sidebar-link-giris.current
-    font-weight: 600
-    color: #42b983
-.sidebar .sidebar-link-giris
-    color: #7f8c8d
-.sidebar-link-giris:hover
-    border-bottom: 2px solid #42b983
-.sidebar-link-giris:focus
-    color: #42b983
-    font-weight: bold
-.sidebar .menu-content, .menu-content-giris
-    font-size: 12px
-    display: none
 .baslik-link::before
     content: "#"
     color: #42b983
@@ -287,7 +271,7 @@ code
     margin: 0 2px
     border-radius: 2px
     white-space: nowrap
-    background-color: #f8f8f8
+    background-color: #efefef
 .tip
     border-left-color: #f66
     padding: 12px 24px 12px 30px
@@ -412,6 +396,8 @@ td, th
     font-size: 11px
 .in-line
     padding-left: 20px
+.in-line1
+    padding-left: 6.5px
 .in-line2
     padding-left: 40px
 .in-line3
@@ -424,8 +410,12 @@ td, th
 .line
     min-height: 24px
     color: #525252
+.font-onucpx
+    font-size: 14px
 .tag
     color: #2973b7
+.fnc
+    color: #0092db
 .string
     color: #42b983
 .attrbt
@@ -434,11 +424,12 @@ td, th
     font-size: 11.5px
 /* Code renklendirme sınıfları tasarımlar ve sairler.*/
 /* Giris Sayfası css özellikleri */
-.giris h2
+h2
     margin: 45px 0 0.8em
     padding-bottom: 0.7em
     border-bottom: 1px solid #ddd
-
+.menu-content-normal
+    display: none
 
 
 
@@ -488,10 +479,6 @@ td, th
         border-top: 5px solid transparent
         border-bottom: 5px solid transparent
         border-left: 8px solid #fff
-
-
-
-
 
 .boslink
     width: 100%

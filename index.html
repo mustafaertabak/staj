@@ -55,7 +55,7 @@
                         </li>
                         <li>
                             <a href="#" onclick="dropmenu()" class="sidebar-link">Kurulum</a>
-                            <ul id="kurulum-side" class="menu-content">
+                            <ul id="kurulum-side" class="">
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Vue-Gelistirici-Araclari">Vue Geliştirici Araçları</a>
                                 </li>
@@ -99,8 +99,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onclick="dropmenu_giris()" class="sidebar-link-giris">Giriş</a>
-                            <ul id="giris-side" class="menu-content-giris">
+                            <a href="#" onclick="dropmenu_giris()" class="sidebar-link">Giriş</a>
+                            <ul id="giris-side" class="menu-content-normal">
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Vuejs-nedir">Vue.js Nedir?</a>
                                 </li>
@@ -121,6 +121,23 @@
                                 </li>
                                 <li>
                                     <a href="#Daha-Fazlasi-icin-hazirmisin" class="section-link" data-scroll="">Daha Fazlası İçin Hazır mısın?</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onclick="dropmenu_ornek()" class="sidebar-link">Vue Örneği</a>
+                            <ul id="ornek-side" class="menu-content-normal">
+                                <li>
+                                    <a class="section-link" data-scroll="" href="#Bir-Vue-Ornegi-Olusturmak">Bir Vue Örneği Oluşturmak</a>
+                                </li>
+                                <li>
+                                    <a class="section-link" data-scroll="" href="#Veri-ve-Methodlar">Veri ve Methodlar</a>
+                                </li>
+                                <li>
+                                    <a class="section-link" data-scroll="" href="#Ornek-Akis-Kancalari">Örnek Akış Kancaları</a>
+                                </li>
+                                <li>
+                                    <a class="section-link" data-scroll="" href="#Akis-Diyagrami">Akış Diyagramı</a>
                                 </li>
                             </ul>
                         </li>
@@ -153,7 +170,6 @@
                     <h2 id="vue-gelistirici-araclari" class="h_2">
                         <a href="#vue-gelistirici-araclari" title="Vue-Gelistirici-Araclariaclari">Vue Geliştirici Araçları</a>
                     </h2>
-                    <hr>
                     <p class="p_text">
                         Vue kullanırken, <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a>'u tarayıcınıza 
                         yüklemenizi ve Vue uygulamalarınızı daha kullanıcı dostu bir arayüzde incelemenizi ve daha kolay hata ayıklamanızı öneririz.
@@ -161,7 +177,6 @@
                     <h2 id="Doğrudan-lt-script-gt-Ekle" class="h_2">
                         <a href="#Doğrudan-lt-script-gt-Ekle" title="Dogrudan-&lt;script&gt;-Ekle">Doğrudan &lt;script&gt; Ekle</a>
                     </h2>
-                    <hr>
                     <p class="p_text">
                         Basitçe indirin ve bir komut dosyası etiiketiyle ekleyin.<code>Vue</code>global değişken olarak kaydedilecektir.
                     </p>
@@ -202,7 +217,6 @@
                         Bu, geliştirme deneyimi yerine hız için optimize edilmiş daha küçük bir yapıdır.
                     </p>
                     <h2 id="NPM" class="h_2"><a href="#NPM" title="NPM" data-scroll="">NPM</a></h2>
-                    <hr>
                     <p class="p_text">
                         Vue ile büyük ölçekli uygulamalar oluştururken NPM, önerilen kurulum yöntemidir. 
                         <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack</a> veya <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a> gibi modül grupları ile güzelce eşleşir.
@@ -214,7 +228,6 @@
                         </div>
                     </div>
                     <h2 id="farkli-yapilarin-tanimlanmasi" class="h_2"><a href="#farkli-yapilarin-tanimlanmasi"  title="farkli-yapilarin-tanimlanmasi" data-scroll="">Farklı Yapıların Tanımlanması</a></h2>
-                    <hr>
                     <p class="p_text">
                             <a href="https://cdn.jsdelivr.net/npm/vue/dist/" target="_blank" rel="noopener">NPM paketinin <code>dist/</code> dizininde</a> Vue.js.'nin birçok farklı yapısını bulacaksınız.
                     </p>
@@ -592,7 +605,7 @@
                     </p>
                     <h2 id="Dev-yapisi" class="h_2">
                             <a href="#Dev-Build" class="headerlink" title="Dev Build" data-scroll="">Dev Yapısı</a>
-                    </h2> <hr>
+                    </h2>
                     <p class="p_text">
                         <strong>Önemli: </strong>
                         GitHub'un <code>/dist</code>
@@ -613,7 +626,6 @@
                     <h2 id="Bower" class="h_2">
                             <a href="#Bower" title="Bower" data-scroll="">Bower</a>
                     </h2>
-                    <hr>
                     <p class="p_text">Sadece UMD yapıları Bower'dan temin edilebilir.</p>
                     <div class="table">
                         <div class="tbody">
@@ -623,7 +635,6 @@
                     <h2 id="AMD-Module-Yukleyicileri" class="h_2">
                         <a href="#AMD-Module-Yukleyicileri" title="AMD-Module-Yukleyicileri" data-scroll="">AMD Module Loaders</a>
                     </h2>
-                    <hr>
                     <p class="p_text">Tüm UMD yapıları doğrudan bir AMD modülü olarak kullanılabilir.</p>
                 </div>
                 <div id="giris" class="giris">
@@ -1068,10 +1079,380 @@
                             })
                         </div>
                     </div>
+                    <p class="p_text">
+                        Şimdi <code>v-bind</code> kullanarak her tekrarlanan bileşene todo geçiş yapabiliriz:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=</span><span class="string">"app-7"</span><span class="tag">></span>
+                            <br>
+                            <span class="in-line tag">&lt;ol&gt;</span>
+                            <br>
+                            <span class="aciklama_satiri in-line2">&lt;!--</span>
+                            <br>
+                            <span class="aciklama_satiri in-line3">Şimdi her todo-item todo nesnesini temsil ediyor, böylece içeriği</span>
+                            <br>
+                            <span class="aciklama_satiri in-line3">Dinamik oluyor.Ayrıca her bir bileşeni bir “anahtar" ile</span>
+                            <br>
+                            <span class="aciklama_satiri in-line3">sağlamamız gerekiyor.</span>
+                            <br>
+                            <span class="aciklama_satiri in-line2">--&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&lt;todo-item</span>
+                            <br>
+                            <span class="tag in-line3">v-for=</span><span class="string">"item in groceryList"</span>
+                            <br>
+                            <span class="tag in-line3">v-bind:todo=</span><span class="string">"item"</span>
+                            <br>
+                            <span class="tag in-line3">v-bind:key=</span><span class="string">"item.id"</span><span class="tag">&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&/todo-item&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;/ol&gt;</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="tbody">
+                            Vue.component(<span class="string">'todo-item'</span>,
+                            {
+                            <br>
+                            <span class="in-line">props: [</span><span class="string">'todo'</span>],
+                            <br>
+                            <span class="in-line">template: </span><span class="string">'&lt;li&gt;{{ todo.text }}&lt;/li&gt;'</span>
+                            <br>
+                            })
+                            <br><br>
+                            <span class="keyword">var</span>
+                            app7
+                            =
+                            <span class="keyword">new</span>
+                            Vue({
+                            <br>
+                            <span class="in-line">el: </span><span class="string">'#app-7'</span>,
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">groceryList: [</span>
+                            <br>
+                            <span class="in-line3">{ id: </span><span class="bit">0</span>,
+                            text:
+                            <span class="string">'Sebzeler'</span>
+                            },
+                            <br>
+                            <span class="in-line3">{ id: </span><span class="bit">1</span>,
+                            text:
+                            <span class="string">'Peynir'</span>
+                            },
+                            <br>
+                            <span class="in-line3">{ id: </span><span class="bit">2</span>,
+                            text:
+                            <span class="string">'İnsanlar başka ne yemeli?'</span>
+                            },
+                            <br>
+                            <span class="in-line2">]</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <div class="demo" id="app-7">
+                        <ol>
+                            <todo-item 
+                            v-for="item in groceryList"
+                            v-bind:todo="item"
+                            v-bind:key="item.id"></todo-item>
+                        </ol>
+                    </div>
+                    <p class="p_text">
+                        Bu, zor bir örnektir, ancak uygulamamızı iki küçük bölüme ayırmayı başardık ve çocuk, 
+                        props arabirimi aracılığıyla ebeveynden makul ölçüde iyi bir şekilde ayrıştırıldı.
+                    </p>
+                    <p class="p_text">
+                        Büyük bir uygulamada, tüm uygulamayı geliştirirken yönetimi kolaylaştırmak için 
+                        bileşenlere bölmek gerekir. İleride bileşenler hakkında çok daha fazla konuşacağız, 
+                        ancak bir uygulamanın şablonunun bileşenlerle neye benzeyebileceğne dair bir örnek:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=</span><span class="string">"app"</span><span class="tag">&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;app-nav&gt;&lt;/app-nav&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;app-view&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&lt;app-sidebar&gt;&lt;/app-sidebar&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&lt;app-content&gt;&lt;/app-content&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;/app-view&gt;</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
                 </div>
+                <div id="ornek" class="vue-ornek">
+                    <h1>Vue Örneği</h1>
+                    <h2 id="Bir-Vue-Ornegi-Olusturmak">Bir Vue Örneği Oluşturmak</h2>
+                    <p class="p_text">
+                        Her bir Vue uygulaması, <code>Vue</code> işlevine sahip yeni bir Vue örneği oluşturarak başlar:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var</span>
+                            vm
+                            =
+                            <span class="keyword">new</span>
+                            Vue({
+                            <br>
+                            <span class="aciklama_satiri in-line">//ayarlar</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        <a href="https://en.wikipedia.org/wiki/Model_View_ViewModel" target="_blank" rel="noopener">MVVM modeli</a> 
+                        ile kesinlikle ilişkili olmamasına rağmen, Vue’nin 
+                        tasarımı kısmen esinlenmiştir. Bir kural olarak, Vue örneğimize başvurmak 
+                        için genellikle <code>vm</code> değişkenini (ViewModel kısaltılması) kullanırız.
+                    </p>
+                    <p class="p_text">
+                        Bir Vue uygulaması, isteğe bağlı olarak yuvalanmış, yeniden kullanılabilir bileşenlerin 
+                        bir ağacına düzenlenmiş <code>yeni Vue</code> ile oluşturulan bir kök Vue örneğinden oluşur. Örneğin, 
+                        bir yapılacaklar uygulamasının bileşen ağacı şöyle görünebilir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            Ana Yapı
+                            <br>
+                            └─ YapılacaklarListesi
+                            <br>
+                            <span class="in-line">├─ Yapılacak İş</span>
+                            <br>
+                            <span class="in-line">│ </span><span class="in-line1">├─ GöreviSilButonu</span> 
+                            <br>
+                            <span class="in-line">│ </span><span class="in-line1">└─ GörevGüncelleButonu</span>
+                            <br>
+                            <span class="in-line">└─ </span>
+                            YapılacaklarListesiAltBilgi
+                            <br>
+                            <span class="in-line2">├─ YapılacaklarıTemizleButonu</span>
+                            <br>
+                            <span class="in-line2">└─ YapılacaklarListesiİstatikleri</span>
+                        </div>
+                    </div>
+                    <h2 id="Veri-ve-Methodlar">Veri ve Methodlar</h2>
+                    <p class="p_text">
+                        Bir Vue örneği oluşturulduğunda, <code>veri</code> nesnesinde bulunan tüm özellikleri Vue’nin 
+                        reaktivite sistemine ekler. Bu özelliklerin değerleri değiştiğinde, görünüm “yeni 
+                        değerler” ile eşleşecek şekilde güncellenir.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">//veri nesnemiz</span>
+                            <br>
+                            <span class="keyword">var</span>
+                            veri
+                            =
+                            { a: <span class="bit"> 1</span> }
+                            <br><br>
+                            <span class="aciklama_satiri">// Nesne bir vue örneğine eklenir</span>
+                            <br>
+                            <span class="keyword">var</span>
+                            vm
+                            =
+                            <span class="keyword">new</span>
+                            Vue({
+                            <br>
+                            <span class="in-line">veri: veri</span>
+                            <br>
+                            })
+                            <br>
+                            <br>
+                            <span class="aciklama_satiri">// Örnekte özellik edinme</span>
+                            <br>
+                            <span class="aciklama_satiri">// orjinal verilerden birini döndürür</span>
+                            <br>
+                            vm.a == veri.a <span class="aciklama_satiri">// => true</span>
+                            <br>
+                            <span class="aciklama_satiri">// Örnekte özelliğin değiştirilmesi</span>
+                            <br>
+                            <span class="aciklama_satiri">// orjinal verileri de etkiler</span>
+                            <br>
+                            vm.a = <span class="bit">2</span>
+                            <br>
+                            data.a <span class="aciklama_satiri">// => 2</span>
+                            <br><br>
+                            <span class="aciklama_satiri">//... ve tersi içinde geçerli.</span>
+                            <br>
+                            data.a = <span class="bit">3</span>
+                            <br>
+                            vm.a <span class="aciklama_satiri">// => 3</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Bu veriler değiştiğinde, görünüm yeniden oluşturulur. <code>Verilerdeki</code> özelliklerin, 
+                        yalnızca örnek oluşturulduğunda mevcutsa <strong>reaktif</strong> olduklarına dikkat edilmelidir. 
+                        Bu, aşağıdaki gibi yeni bir özellik eklerseniz:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            vm.b = <span class="string">'Merhaba'</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Ardından <code>b</code> olarak yapılan değişiklikler, herhangi bir görünüm güncellemesini tetiklemez. 
+                        Daha sonra bir özelliğe ihtiyacınız olacağını biliyorsanız, bazı başlangıç değerlerini ayarlamanız 
+                        gerekir. Örneğin :
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            veri: {
+                            <br>
+                            <span class="in-line">yeniYapılacakİş: </span><span class="string">''</span>,
+                            <br>
+                            <span class="in-line">görüntülenmeSayısı: </span><span class="bit">0</span>,
+                            <br>
+                            <span class="in-line">tamamlanmışTodolarıGizle: </span><span class="bit">false</span>,
+                            <br>
+                            <span class="in-line">yapılacaklar: [],</span>
+                            <br>
+                            <span class="in-line">error: </span><span class="bit">null</span>
+                            <br>
+                            }
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Bunun tek istisnası, mevcut özelliklerin değiştirilmesini engelleyen <code>Object.freeze()</code> 
+                        kullanımıdır, bu da reaktivite sisteminin değişiklikleri izleyemediği anlamına gelir.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var</span>
+                            obj = {
+                            <br>
+                            <span class="in-line">foo: </span><span class="string">'bar'</span>
+                            <br>
+                            }
+                            <br><br>
+                            <span class="string">Object</span>.freeze(obj)
+                            <br><br>
+                            <span class="keyword">new</span>
+                            Vue({
+                            <br>
+                            <span class="in-line">el: </span><span class="string">'#app'</span>,
+                            <br>
+                            <span class="in-line">veri: obj</span>
+                            <br>})
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=<span class="string">"app"</span>&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;p&gt;</span>{{ foo }} <span class="tag">&lt;/p&gt;</span>
+                            <br>
+                            <span class="aciklama_satiri in-line">&lt;!-- Bu artık foo'yu güncelleyemez! --&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;button v-on:click=<span class="string">"foo = 'baz'"</span>&gt;</span>Değiştir<span class="tag">&lt;/button&gt;</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Veri özelliklerine ek olarak, Vue örnekleri bir dizi yararlı örnek 
+                        özellik ve yöntemi açığa çıkarır. Bunlar, kullanıcı tanımlı özelliklerden ayırt 
+                        etmek için <code>$</code> ile öneklenir. Örneğin:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var </span>data = { a: <span class="bit">1</span>}
+                            <br>
+                            <span class="keyword">var</span> vm = <span class="keyword">new </span>Vue({
+                            <br>
+                            <span class="in-line">el: <span class="string">'#ornek'</span>,</span>
+                            <br>
+                            <span class="in-line">veri: veri</span>
+                            <br>
+                            })
+                            <br><br>
+                            vm.$veri === veri <span class="aciklama_satiri">// => true</span>
+                            <br>
+                            vm.$el === <span class="string">document</span>.getElementById(<span class="string">'ornek'</span>) <span class="aciklama_satiri">// => true</span>
+                            <br><br>
+                            <span class="aciklama_satiri">// $izle bir örnek methodtur</span>
+                            <br>
+                            vm.$izle(<span class="string">'a'</span>, <span class="fnc">function</span>) {
+                            <br>
+                            <span class="aciklama_satiri in-line">// vm.a değiştiğinde bu geri arama çağrılır.</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <h2 id="Ornek-Akis-Kancalari">Örnek Akış Kancaları</h2>
+                    <p class="p_text">
+                        Her bir Vue örneği, oluşturulduğunda bir dizi başlatma adımından geçer - örneğin, veri 
+                        gözlemini kurması, şablonu derlemesi, örneği DOM'a bağlaması ve veri değiştiğinde DOM'ı 
+                        güncellemesi gerekir. Ayrıca yaşam döngüsü kancaları olarak adlandırılan fonksiyonları 
+                        çalıştırır ve yol boyunca kullanıcılara belirli aşamalarda kendi kodlarını ekleme fırsatı verir.
+                    </p>
+                    <p class="p_text">
+                        Örneğin <code>oluşturulan</code> kanca, bir örnek oluşturulduktan sonra kodu çalıştırmak için kullanılabilir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">new</span> Vue({
+                            <br>
+                            <span class="in-line">veri: {
+                            <br>
+                            <span class="in-line2">a: <span class="bit">1</span></span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">olusturulan: <span class="fnc">function</span>()</span> {
+                            <br>
+                            <span class="aciklama_satiri in-line2">// bu, vm örneğini işaret ediyor.</span>
+                            <br>
+                            <span class="string in-line2">console</span>.log(<span class="string">'a =' </span> + <span class="keyword">this</span>.a</span>)
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                            <br>
+                            <span class="aciklama_satiri font-onucpx">// => "a = 1"</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        <code>Eklenen</code>, <code>güncellenen</code> ve <code>yok edilen</code> yaşam d
+                        öngüsü örneğinin farklı aşamalarında çağrılacak başka kancalar da vardır. Tüm yaşam 
+                        döngüsü kancaları, <code>bu</code> bağlamı çağırmak için Vue örneğini işaret ederek bu içeriğe çağrılır.
+                    </p>
+                    <p class="tip">
+                        Hedef fonksiyonlarını, bir ayarlar özelliğinde veya geri aramada, örneğin: 
+                        <code>created: () => console.log(this.a)</code> veya 
+                        <code>vm.$watch('a', newValue => this.myMethod())</code>
+                        gibi fonksiyonlarda kullanmayın. Hedef fonksiyonları ana içeriiğe bağlı olduğunan,
+                        bu beklediğiniz gibi bir Vue örneği olmaz, genellikle 
+                        <code>Uncaught TypeError: Cannot read property of undefined</code> ya da 
+                        <code>Uncaught TypeError: this.myMethod is not a function</code> gibi hatalarla sonuçlanır.
+                    </p>
+                    <h2 id="Akis-Diyagrami">Akış Diyagramı</h2>
+                    <p class="p_text">
+                            Aşağıda örnek yaşam döngüsü için bir diyagramdır. Şu anda olan her şeyi 
+                            tam olarak anlamanıza gerek yok, ancak daha fazla öğrenirken ve inşa ettiğinizde 
+                            faydalı bir referans olacaktır.
+                    </p>
+                    <p>
+                        <img src="img/lifecycle.png" alt="Vue Ornekleri Akis Diyagrami">
+                    </p>
+                </div> 
             </div>
         </div>
     </div>
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="js/smooth-scrolling.js" type="text/javascript"></script>
     <script src="js/demos.js" type="text/javascript"></script>
     <script src="js/dropdown.js" type="text/javascript"></script>
     <script src="js/dropmenu.js" type="text/javascript"></script>

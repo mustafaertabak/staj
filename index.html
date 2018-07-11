@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <a class="logo" href="/index.html">
+            <a class="logo" href="index.html">
                 <img src="img/logo.png">
                 <span>Vue.js</span>
             </a>
@@ -139,6 +139,50 @@
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Akis-Diyagrami">Akış Diyagramı</a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" onclick="dropmenu_sablon()" class="sidebar-link">Şablon Söz Dizimi</a>
+                            <ul id="sablon-side" class="menu-content-normal">
+                                <li>
+                                    <a class="section-link" data-scroll="" href="#Ara-Deger-Bulma">Ara Değer Bulma</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="#metin" class="section-link" data-scroll="">Metin</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Ham-HTML" class="section-link" data-scroll="">Ham HTML</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Ozellikler" class="section-link" data-scroll="">Özellikler</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Javascript-Ifadelerini-Kullanma" class="section-link" data-scroll="">Javascript İfadelerini Kullanma</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <a href="#Direktifler" class="section-link" data-scroll="">Direktifler</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="#Argumanlar" class="section-link" data-scroll="">Argümanlar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Duzenleyiciler" class="section-link" data-scroll="">Düzenleyiciler</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <a href="#Kisayollar" class="section-link" data-scroll="">Kısayollar</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="#v-bind-kisayolu" class="section-link" data-scroll="">v-bind Kisayolu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#v-on-kisayolu" class="section-link" data-scroll="">v-on Kisayolu</a>
+                                    </li>
+                                </ul>
                             </ul>
                         </li>
                     </ul>
@@ -1448,6 +1492,208 @@
                         <img src="img/lifecycle.png" alt="Vue Ornekleri Akis Diyagrami">
                     </p>
                 </div> 
+                <div id="sablon" class="sablon-sozdizmi">
+                    <h1>Şablon Söz Dizimi</h1>
+                    <p class="p_text">
+                        Vue.js, oluşturulmuş DOM'yi temel Vue örneğinin verilerine bildirmenize 
+                        olanak tanıyan bir HTML tabanlı şablon sözdizimi kullanır. Tüm Vue.js 
+                        şablonları, uyumlu tarayıcılar ve HTML ayrıştırıcıları tarafından 
+                        ayrıştırılabilen geçerli bir HTML'dir.
+                    </p>
+                    <p class="p_text">
+                        Virtual DOM kavramlarına aşina iseniz ve JavaScript'in ham gücünü tercih 
+                        ediyorsanız, isteğe bağlı JSX desteği ile şablonlar yerine render işlevlerini 
+                        doğrudan yazabilirsiniz.
+                    </p>
+                    <h2 id="Ara-Deger-Bulma">Ara Değer Bulma</h2>
+                    <h3 id="metin" class="h3_c baslik-link">
+                        Metin
+                    </h3>
+                    <p class="p_text">
+                        En basit veri bağlama biçimi “Bıyık” sözdizimini (çift küme parantezleri) 
+                        kullanarak metin enterpolasyonudur:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;span&gt;</span>Message: {{ msg }}<span class="tag">&lt;/span&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Bıyık etiketi, ilgili veri nesnesi üzerindeki <code>msg</code> özelliğinin değeriyle 
+                        değiştirilecektir. Ayrıca, veri nesnesinin <code>msg</code> özelliği değiştiğinde de güncellenecektir.
+                    </p>
+                    <p class="p_text">
+                        Aynı zamanda <a href="https://vuejs.org/v2/api/#v-once" target="_blank">v-once direktifi</a> kullanarak veri değişiminde güncellenmeyen bir kerelik 
+                        ara değerleri de gerçekleştirebilirsiniz, ancak aynı alandaki diğer bağlamaları da 
+                        etkileyeceğini unutmayın:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;span v-once&gt;</span>Bu asla değişmeyecek: {{ msg }}<span class="tag">&lt;/span&gt;</span>
+                        </div>
+                    </div>
+                    <h3 id="Ham-HTML" class="h3_c baslik-link">
+                        Ham HTML
+                    </h3>
+                    <p class="p_text">
+                        Çift süslü parantez, verileri HTML değil düz metin olarak yorumlar. Gerçek HTML çıktısı almak için <code>v-html</code> yönergesini kullanmanız gerekir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;p&gt;</span>Süslü parantez kullanma: {{ hamHTML }}<span class="tag">&lt;/p&gt;</span>
+                            <br>
+                            <span class="tag">&lt;p&gt;</span>v-html direktifini kullanma: <span class="tag">&lt;span v-html=<span class="string">"hamHTML"</span>&lt;/p&gt;</span>
+                        </div>
+                    </div>
+                    <div class="demo" id="app-8">
+                        <p>Süslü parantez kullanma: {{ hamHTML }}</p>
+                        <p>v-html direktifi kullanma: <span v-html="hamHTML"></span></p>
+                    </div>
+                    <p class="p_text">
+                        <code>span</code> içeriği, düz HTML olarak yorumlanan <code>rawHtml</code> özelliğinin 
+                        değeriyle değiştirilir; veri bağlantıları yoksayılır. Şablon kısmi 
+                        oluşturmak için <code>v-html</code> kullanamayacağınızı unutmayın, çünkü 
+                        Vue, dize tabanlı bir şablon oluşturma motoru değildir.
+                    </p>
+                    <p class="tip">
+                        Web sitenizde dinamik HTML'yi dinamik olarak oluşturmak çok tehlikeli 
+                        olabilir çünkü XSS güvenlik açıklarına kolayca yol açabilir.Yalnızca 
+                        güvenilir içerik üzerinde HTML interpolasyonunu kullanın ve asla kullanıcı 
+                        tarafından sağlanan içerik üzerinde kullanmayın. 
+                    </p>
+                    <h3 id="Ozellikler" class="h3_c baslik-link">Özellikler</h3>
+                    <p class="p_text">
+                        Süslü parantezler HTML özniteliklerinde kullanılamaz. Bunun yerine 
+                        bir <code>v-bind direktifini</code> kullanın:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div v-bind:id=<span class="string">"dinamikId"</span>&gt;&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Sadece varlıkların doğru olduğu yerlerde, boole özelliklerinde,
+                        <code>v-bind</code> biraz farklı çalışır. Bu örnekte:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;button v-bin:disabled=<span class="string">"butonDevredisi"</span>&gt;</span>Button<span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Eğer <code>butonDevredisi</code> öğesi <code>null</code>, 
+                        <code>undefined</code> veya <code>false</code> değerine sahipse, 
+                        <code>disabled</code> özelliği oluşturulmuş <code>&lt;button&gt;</code> 
+                        öğesine dahil edilmez.
+                    </p>
+                    <h3 id="Javascript-Ifadelerini-Kullanma">Javascript İfadelerini Kullanma</h3>
+                    <p class="p_text">
+                        Şimdiye kadar sadece şablonlarımızdaki basit özellik anahtarlarına 
+                        bağlanıyoruz. Ancak Vue.js aslında tüm veri bağlamaları içindeki 
+                        JavaScript ifadelerinin tam gücünü desteklemektedir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            {{ numara + 1 }}
+                            <br><br>
+                            {{ tamam ? 'EVET' : 'HAYIR' }}
+                            <br><br>
+                            {{ message.split('').reverse().join('') }}
+                            <br><br>
+                            <span class="tag">&lt;div v-bind:id=<span class="string">"'list-' + id"</span>&gt;&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <p class="tip">
+                        Şablon ifadeleri korumalı ve yalnızca <code>Matematik</code> ve 
+                        <code>Tarih</code> gibi bir beyaz küre listesine erişebilir. Şablon 
+                        ifadelerinde kullanıcı tanımlı globallere erişmeyi denememelisiniz.
+                    </p>
+                    <h2 id="Direktifler">Direktifler</h2>
+                    <p class="p_text">
+                        Talimatlar <code>v-</code> ön eki ile ayrıcalıklı özelliklerdir. Talimat 
+                        özellik değerlerinin tek bir <strong>JavaScript ifadesi</strong> olması 
+                        beklenir (<code>v-for</code> için istisna, daha sonra tartışılacaktır).Bir direktörün görevi, ifade ettiği değer değiştiğinde, DOM’a yan 
+                        etkileri tepkisel olarak uygulamaktır.Girişte gördüğümüz örneği inceleyelim:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;p v-if=<span class="string">"gor"</span>&gt;</span>Şimdi beni görüyorsun.<span class="tag">&lt;/p&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Burada, <code>v-if</code> yönergesi <code>gor</code> ifadesinin değerinin doğruluğuna dayanarak 
+                        <code>&lt;p&gt;</code> öğesini kaldıracak / ekleyecektir.
+                    </p>
+                    <h3 id="Argumanlar" class="h3_c baslik-link">Argümanlar</h3>
+                    <p class="p_text">
+                        Bazı direktifler "argüman" alabilirler ve direktif adından sonra bir kolon tarafndan gösterilirler.
+                        Örneğin, <code>v-bind</code> yönergesi bir HTML özniteliğini yeniden etkinleştirmek için kullanılır:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;a v-bind:href=<span class="string">"url"</span>&gt;</span>...<span class="tag">&lt;/a&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                            Burada <code>href</code>, <code>v-bind</code> yönergesinin, öğenin <code>href</code> özniteliğini ifade <code>url</code>'sinin değerine bağladığını söyleyen argümandır.
+                    </p>
+                    <p class="p_text">
+                        Bu örnek ise DOM olaylarını dinleyen v-on yönergesidir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;a v-on:click=<span class="string">"birŞeyYap"</span>&gt;</span>...<span class="tag">&lt;/a&gt;</span>
+                        </div>
+                    </div>
+                    <h3 id="Duzenleyiciler" class="h3_c baslik-link">Düzenleyiciler</h3>
+                    <p class="p_text">
+                        Değiştiriciler, bir nokta ile belirtilen özel postfix'lerdir. Bir direktifin bazı özel 
+                        yollarla bağlanması gerektiğini belirtir.Örneğin, <code>.prevent</code> değiştiricisi, tetiklenen 
+                        olayla ilgili <code>v-on</code> yönergesine <code>event.preventDefault()</code> öğesini çağırmasını söyler:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;form v-on:submit.prevent=<span class="string">"Gonder"</span>&gt;</span>...<span class="tag">&lt;/form&gt;</span>
+                        </div>
+                    </div>
+                    <h2 id="Kisayollar">Kısayollar</h2>
+                    <p class="p_text">
+                        <code>v-</code> ön eki, şablonlarınızdaki Vue'ya özgü öznitelikleri tanımlamak için görsel bir işaret görevi görür.
+                        Bu, varolan bazı biçimlendirmelere dinamik davranış uygulamak için Vue.js'yi kullanırken yararlıdır.
+                        ama sıkça kullanılan bazı direktifler için ayrıntılı olabilir. Aynı zamanda Vue.js'nin her şablonu yönetdiği 
+                        bir SPA oluştururken <code>v-</code> öneki gereksinimi daha az önem kazanır. Bu nedenle, Vue.js en sık kullanılan 
+                        direktiflerden ikisi, <code>v-bind</code> ve <code>v-on</code> için özel kısayollar sağlar:
+                    </p>
+                    <h3 id="v-bind-kisayolu" class="h3_c baslik-link"><code>v-bind</code> Kısayolu</h3>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">&lt;!-- tam yazılışı --&gt;</span>
+                            <br>
+                            <span class="tag">&lt;a v-bind:href=<span class="string">"url"</span>&gt;</span>...<span class="tag">&lt;/a&gt;</span>
+                            <br><br>
+                            <span class="aciklama_satiri">&lt;!-- kısayolu --&gt;</span>
+                            <br>
+                            <span class="tag">&lt;a :href=<span class="string">"url"</span>&gt;</span>...<span class="tag">&lt;/a&gt;</span>
+                        </div>
+                    </div>
+                    <h3 id="v-on-kisayolu" class="h3_c baslik-link"><code>v-on</code> Kısayolu</h3>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">&lt;!-- tam yazılışı --&gt;</span>
+                            <br>
+                            <span class="tag">&lt;a v-on:click=<span class="string">"birŞeyYap"</span>&gt;</span>...<span class="tag">&lt;/a&gt;</span>
+                            <br><br>
+                            <span class="aciklama_satiri">&lt;!-- kısayolu --&gt;</span>
+                            <br>
+                            <span class="tag">&lt;a @click=<span class="string">"birŞeyYap"</span>&gt;</span>...<span class="tag">&lt;/a&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Normal HTML’den biraz farklı görünebilirler ancak <code>:</code> ve <code>@</code> özellik adları için geçerli karakterlerdir 
+                        ve tüm Vue.js destekli tarayıcılar doğru şekilde ayrıştırılabilir. Ayrıca, son işlenen işaretlemede görünmezler.
+                        Kısayol sözdizimi tamamen isteğe bağlıdır, ancak daha sonra kullanımı hakkında daha fazla bilgi aldığınızda bunu takdir edeceksiniz.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

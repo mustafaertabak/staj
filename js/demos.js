@@ -71,3 +71,13 @@ Vue.component('todo-item', {
       ]
     }
   })
+
+var app8 = new Vue({
+    el: '#app-8',
+    data: function () {
+        return {
+            hamHTML: '<span style="color: red">Bu kırmızı olmalı.</span>'
+        }
+    }
+})
+  

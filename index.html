@@ -54,10 +54,10 @@
                             <h3>Gerekenler</h3>
                         </li>
                         <li>
-                            <a href="#" onclick="dropmenu()" class="sidebar-link">Kurulum</a>
-                            <ul id="kurulum-side" class="">
+                            <a href="#" data-content="kurulum" class="sidebar-link c_button" style="display: block">Kurulum</a>
+                            <ul id="kurulum-side" class="menu-content-normal show">
                                 <li>
-                                    <a class="section-link" data-scroll="" href="#Vue-Gelistirici-Araclari">Vue Geliştirici Araçları</a>
+                                    <a class="section-link" data-scroll="" href="#Vue-Gelistirici-Araclari ">Vue Geliştirici Araçları</a>
                                 </li>
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Doğrudan-lt-script-gt-Ekle">Doğrudan &lt;script&gt; Ekle</a>
@@ -99,7 +99,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onclick="dropmenu_giris()" class="sidebar-link">Giriş</a>
+                            <a href="#" data-content="giris" class="sidebar-link c_button">Giriş</a>
                             <ul id="giris-side" class="menu-content-normal">
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Vuejs-nedir">Vue.js Nedir?</a>
@@ -125,7 +125,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onclick="dropmenu_ornek()" class="sidebar-link">Vue Örneği</a>
+                            <a href="#" data-content="ornek" class="sidebar-link c_button">Vue Örneği</a>
                             <ul id="ornek-side" class="menu-content-normal">
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Bir-Vue-Ornegi-Olusturmak">Bir Vue Örneği Oluşturmak</a>
@@ -142,7 +142,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onclick="dropmenu_sablon()" class="sidebar-link">Şablon Söz Dizimi</a>
+                            <a href="#" data-content="sablon" class="sidebar-link c_button">Şablon Söz Dizimi</a>
                             <ul id="sablon-side" class="menu-content-normal">
                                 <li>
                                     <a class="section-link" data-scroll="" href="#Ara-Deger-Bulma">Ara Değer Bulma</a>
@@ -185,12 +185,37 @@
                                 </ul>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#" data-content="CPM" class="sidebar-link c_button">Hesaplanmış Özelikler ve Gözlemleyicler</a>
+                            <ul id="CPM-side" class="menu-content-normal">
+                                <li>
+                                    <a href="#Hesaplanmis-Ozellikler" class="section-link" data-scroll="">Hesaplanmış Özellikler</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="#Temel-Ornek" class="section-link" data-scroll="">Temel Örnek</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Onbellegi-Isleme-ve-Methodlar" class="section-link" data-scroll="">Önbelleği İşleme ve Metodlar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Hesaplanan-ve-Izlenen-Ozellikler" class="section-link" data-scroll="">Hesaplanan ve İzlenen Özellikler</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Hesaplanan-Ayarlayicilar" class="section-link" data-scroll="">Hesaplanan Ayarlayıcılar</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <a href="#Gozlemleyiciler" class="section-link" data-scroll="">Gözlemleyiciler</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <!-- SOL MENÜ İÇERİK -->
                 </div>
             </div> 
-            <div class="content">
-                <div id="kurulum" class="kurulum">
+            <div id="main" class="content">
+                <div id="kurulum" class="kurulum menu-content-normal show">
                     <h1>Kurulum</h1>
                     <h3 class="h3_c">
                         <a href="#kurulum" class="baslik-link"></a>
@@ -681,7 +706,7 @@
                     </h2>
                     <p class="p_text">Tüm UMD yapıları doğrudan bir AMD modülü olarak kullanılabilir.</p>
                 </div>
-                <div id="giris" class="giris">
+                <div id="giris" class="giris menu-content-normal">
                     <h1>Giriş</h1>
                     <h2 id="Vuejs-nedir">Vue.js Nedir?</h2>
                     <p class="p_text">
@@ -1237,7 +1262,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="ornek" class="vue-ornek">
+                <div id="ornek" class="vue-ornek menu-content-normal">
                     <h1>Vue Örneği</h1>
                     <h2 id="Bir-Vue-Ornegi-Olusturmak">Bir Vue Örneği Oluşturmak</h2>
                     <p class="p_text">
@@ -1492,7 +1517,7 @@
                         <img src="img/lifecycle.png" alt="Vue Ornekleri Akis Diyagrami">
                     </p>
                 </div> 
-                <div id="sablon" class="sablon-sozdizmi">
+                <div id="sablon" class="sablon-sozdizmi menu-content-normal">
                     <h1>Şablon Söz Dizimi</h1>
                     <p class="p_text">
                         Vue.js, oluşturulmuş DOM'yi temel Vue örneğinin verilerine bildirmenize 
@@ -1693,6 +1718,303 @@
                         ve tüm Vue.js destekli tarayıcılar doğru şekilde ayrıştırılabilir. Ayrıca, son işlenen işaretlemede görünmezler.
                         Kısayol sözdizimi tamamen isteğe bağlıdır, ancak daha sonra kullanımı hakkında daha fazla bilgi aldığınızda bunu takdir edeceksiniz.
                     </p>
+                </div>
+                <div id="CPM" class="HOG menu-content-normal">
+                    <h1>Hesaplanmış Özelliikler ve Gözlemleyiciler</h1>
+                    <h2 id="Hesaplanmis-Ozellikler">Hesaplanmış Özellikler</h2>
+                    <p class="p_text">
+                        Şablonlarınıza çok fazla mantık koymak, onları şişirip korumayı zorlaştırabilir.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=<span class="string">"Ornek"</span>&gt;</span>
+                            <br>
+                            <span class="in-line">{{ mesaj.split('').reverse().join('') }}</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Bu noktada, şablon artık basit ve açıklayıcı değildir. <code>Mesaj</code>'ı ters çevirdiğini anlamadan 
+                        önce bir saniyeliğine koda bakmak gerekiyor. Bu ters çevirilen mesajı bir kereden fazla
+                        görüntülemek istediğinizde sorun daha da kötüleşir.
+                    </p>
+                    <p class="p_text">
+                        Bu yüzden herhangi bir karmaaşık mantık için <strong>hesaplanmış özellik</strong> kullanmalısınız.
+                    </p>
+                    <h3 id="Temel-Ornek" class="h3_c baslik-link">Temel Örnek</h3>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=<span class="string">"ornek"</span>&gt;</span>
+                            <br>
+                            <span class="in-line tag">&lt;p&gt;</span>Orjinal mesaj: "{{ mesaj }}"<span class="tag">&lt;/p&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;p&gt;</span>Oluşturulmuş ters mesaj: "{{ tersMesaj }}"<span class="tag">&lt;/p&gt;</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var </span> app9 = <span class="keyword">new</span> Vue({
+                            <br>
+                            <span class="in-line">el: <span class="string">'#app-9'</span>,</span>
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">message: <span class="string">'Merhaba'</span></span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">computed: {</span>
+                            <br>
+                            <span class="aciklama_satiri in-line2">// oluşturulan bir alıcı</span>
+                            <br>
+                            <span class="in-line2">reversedMessage: <span class="fnc">function</span>() {</span>
+                            <br>
+                            <span class="aciklama_satiri in-line3">// oluşturulan fonksiyon mesajı reverse ederek</span>
+                            <br>
+                            <span class="aciklama_satiri in-line3">// reversedMessage olarak geri döndürüyor.</span>
+                            <br>
+                            <span class="keyword in-line3">return this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <p class="p_text">Sonuç:</p>
+                    <div class="demo" id="app-9">
+                        <p>Orjinal mesaj: "{{ message }}"</p>
+                        <br>
+                        <p>Oluşturulan ters mesaj: "{{ reversedMessage }}"</p>
+                    </div>
+                    <p class="p_text">
+                        Burada hesaplanmış bir özellik "<code>reversedMessage</code>" ilan ettik. Sağladığımız işlev, 
+                        "<code>vm.reversedMessage</code>" özelliği için getter işlevi olarak kullanılacaktır:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="string">console</span>.log(vm.reversedMessage)<span class="aciklama_satiri">// => 'abahreM'</span>
+                            <br>
+                            vm.message = <span class="string">'Güle Güle'</span>
+                            <br>
+                            <span class="string">console</span>.log(vm.reversedMessage) <span class="aciklama_satiri">// => 'elüG elüG'</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Konsolu açabilir ve örnek vm ile oynayabilirsiniz. <code>vm.reversedMessage</code> değeri her 
+                        zaman <code>vm.message</code> değerine bağlıdır.
+                    </p>
+                    <p class="p_text">
+                        Vue <code>vm.reversedMessage</code>’ın <code>vm.message</code>’a bağlı olduğunu bilir ve 
+                        <code>vm.message</code> değiştiğinde <code>vm.reversedMessage</code>’a bağlı herşey değişir. 
+                        En iyi yanı ise bu bağımlılık ilişkisini deklaratif olarak oluşturduğumuzdur: oluşturulan 
+                        alıcı işlevinin hiçbir yan etkisi yoktur, bu da test etmeyi ve anlamayı kolaylaştırır.
+                    </p>
+                    <h3 class="h3_c baslik-link" id="Onbellegi-Isleme-ve-Methodlar">Önbelleği İşleme ve Methodlar</h3>
+                    <p class="p_text">
+                        İfadede bir yöntemi çağırıp aynı sonucu elde edebileceğimizi fark etmiş olabilirsiniz:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;p&gt;</span>Ters çevirilen mesaj: "{{ reversedMessage() }}"<span class="tag">&lt;/p&gt;</span>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">// Bileşen</span>
+                            <br>
+                            metods: {
+                            <br>
+                            <span class="in-line">reversedMessage: <span class="fnc">function</span>() {</span>
+                            <br>
+                            <span class="in-line2 keyword">return this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            }
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        İşlenmiş bir özellik yerine, aynı işlevi bir yöntem olarak tanımlayabiliriz. Sonuç olarak, 
+                        iki yaklaşım aslında tamamen aynıdır. Ancak, fark, hesaplanan özelliklerin bağımlılıklarına 
+                        göre önbelleğe alındığıdır. İşlenmiş bir özellik, yalnızca bazı bağımlılıkları değiştiğinde
+                        yeniden değerlendirilecektir. Burada <code>message</code> değişmediği sürece, <code>reversedMessage</code> özelliğine çoklu 
+                        erişim fonksiyonu daha önce tekrar çalıştırmak zorunda kalmadan, önceden işlenen sonucu hemen 
+                        döndürecektir.
+                    </p>
+                    <p class="p_text">
+                            Bu ayrıca, aşağıdaki işlenmiş özelliklerin hiçbir zaman güncellenmeyeceği anlamına gelir, 
+                            çünkü <code>Date.now()</code> bir reaktif bağımlılık değildir:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            compute: {
+                            <br>
+                            <span class="in-line">now: <span class="fnc">function</span>() {</span>
+                            <br>
+                            <span class="keyword in-line2">return <span class="string">Date</span></span>.now()
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            }
+                        </div>
+                    </div>
+                    <p class="p_text">
+                            Karşılaştırma yapıldığında, bir metot çağrısı ile <strong>her zaman</strong>  yeniden işlem çalışmış olur.
+                    </p>
+                    <h3 id="Hesaplanan-ve-Izlenen-Ozellikler" class="h3_c baslik-link">Hesaplanan ve İzlenen Özellikler</h3>
+                    <p class="p_text">
+                        Vue, bir Vue örneğindeki veri değişikliklerini gözlemlemek ve bunlara tepki vermek için 
+                        daha genel bir yol sağlar: <strong>özellikleri izleme</strong>. Diğer bazı verilere göre değişmesi gereken 
+                        bazı verileriniz olduğunda, özellikle de bir AngularJS arka planından geliyorsanız, <code>watch</code> 
+                        aşırı kullanmak caziptir. Ancak, bir zorunluluktan ziyade hesaplanmış bir <code>watch</code> özelliği 
+                        geri çağırıp kullanmak genellikle daha iyi bir fikirdir.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=<span class="string">"app-10"</span>&gt;</span>{{ fullName }}<span class="tag">&lt;/div&GT;</span>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({
+                            <br>
+                            <span class="in-line">el: <span class="string">'#app-10'</span>,</span>
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">isim: <span class="string">'Foo'</span>,</span>
+                            <br>
+                            <span class="in-line2">soyisim: <span class="string">'Bar'</span>,</span>
+                            <span class="in-line2">tamisim: <span class="string">'Foo Bar'</span></span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">watch: {</span>
+                            <br>
+                            <span class="in-line2">isim: <span class="fnc">function </span> (val) {</span>
+                            <br>
+                            <span class="in-line3 keyword">this</span>.tamisim = val + <span class="string">' '</span> + <span class="keyword">this</span>.soyisim
+                            <br>
+                            <span class="in-line2">},</span>
+                            <br>
+                            <span class="in-line2">soyisim: <span class="fnc">function </span> (val) {</span>
+                            <br>
+                            <span class="in-line3 keyword">this</span>.tamisim = <span class="keyword">this</span>.soyisim + <span class="string">' '</span> + val
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <p class="p_text">
+                            Yukarıdaki kod zorlu ve tekrarlayıcıdır. Şimdi bir de bu sürümüne bakalım ve karşılaştıralım.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({
+                            <br>
+                            <span class="in-line">el: <span class="string">'#app-10'</span>,</span>
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">isim: <span class="string">'Foo'</span>,</span>
+                            <br>
+                            <span class="in-line2">soyisim: <span class="string">'Bar'</span>,</span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">computed: {</span>
+                            <br>
+                            <span class="in-line2">tamisim: <span class="fnc">function</span> () {</span>
+                            <br>
+                            <span class="in-line3 keyword">return this</span>.isim + <span class="string">' '</span> + <span class="keyword">this</span>.soyisim
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Çok daha iyi değilmi?
+                    </p>
+                    <h3 id="Hesaplanan-Ayarlayicilar" class="h3_c baslik-link">Hesaplanan Ayarlayıcılar</h3>
+                    <p class="p_text">
+                        Hesaplanan özellikler varsayılan olarak yalnızca 
+                        alıcıdır, ancak gerektiğinde bir ayarlayıcı da sağlayabilirsiniz:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">// ...</span>
+                            <br>
+                            computed: {
+                            <br>
+                            <span class="in-line">tamisim: {</span>
+                            <br>
+                            <span class="aciklama_satiri in-line2">// alıcı</span>
+                            <br>
+                            <span class="in-line2">get: <span class="fnc">function </span>() {</span>
+                            <br>
+                            <span class="in-line3 keyword">return this</span>.isim + <span class="string">' '</span> + <span class="keyword">this</span>.soyisim
+                            <br>
+                            <span class="in-line2">},</span>
+                            <br>
+                            <span class="aciklama_satiri in-line2">// ayarlayıcı</span>
+                            <br>
+                            <span class="in-line2">set: <span class="fnc">function</span> (yeniDeger) {</span>
+                            <br>
+                            <span class="in-line3 keyword">var </span>isimler = yeniDeger.split(<span class="string">' '</span>)
+                            <br>
+                            <span class="in-line3 keyword">this</span>.isim = isimler[<span class="bit">0</span>]
+                            <br>
+                            <span class="in-line3 keyword">this</span>.soyisim = isimler[isimler.length - <span class="bit">1</span>]
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                            <br>
+                            <span class="aciklama_satiri">// ...</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Şimdi <code>vm.tamisim = ‘Vue js’</code> çalıştırdığımızda, ayarlayıcı
+                        çağırılacak ve <code>vm.isim</code> ve <code>vm.soyisim</code> buna göre güncellenecektir.
+                    </p>
+                    <h2 id="Gozlemleyiciler">Gözlemleyiciler</h2>
+                    <p class="p_text">
+                        Hesaplanan özellikler çoğu durumda daha uygun olsa da, özel bir gözlemcinin gerekli 
+                        olduğu zamanlar vardır. Bu nedenle Vue, <code>watch</code> seçeneğiyle veri değişikliklerine tepki 
+                        vermenin daha genel bir yolunu sunuyor. 
+                    </p>
+                    <p class="p_text">Örneğin:</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;div id=<span class="string">"watch-example"</span>&gt;</span>
+                            <br>
+                            <span class="in-line tag">&lt;p&gt;</span>
+                            <br>
+                            <span class="in-line2">Evet/Hayır sorusunu sorun:</span>
+                            <br>
+                            <span class="in-line2 tag">&lt;input v-model=<span class="string">"soru"</span>&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;/p&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;p&gt;</span>{{ cevap }}<span class="tag">&lt;/p&gt;</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

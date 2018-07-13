@@ -72,6 +72,7 @@ Vue.component('todo-item', {
     }
   })
 
+/* 8-DEMO UYGULAMASI app-8 */
 var app8 = new Vue({
     el: '#app-8',
     data: function () {
@@ -80,4 +81,18 @@ var app8 = new Vue({
         }
     }
 })
+  
+/* 9-DEMO UYGULAMASI app-9 */
+
+var vm = new Vue({
+    el: '#app-9',
+    data: {
+      message: 'Merhaba'
+    },
+    computed: {
+      reversedMessage: function () {
+        return this.message.split('').reverse().join('')
+      }
+    }
+  })
   

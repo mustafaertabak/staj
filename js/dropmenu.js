@@ -1,79 +1,41 @@
-function dropmenu() {
-    document.getElementById("kurulum").classList.add("show");
-    document.getElementById("kurulum-side").classList.add("show");
-    document.getElementById("giris").classList.remove("show");
-    document.getElementById("giris-side").classList.remove("show");
-    document.getElementById("giris").classList.add("hidden");
-    document.getElementById("giris-side").classList.add("hidden");
-    document.getElementById("ornek").classList.remove("show");
-    document.getElementById("ornek").classList.add("hidden");
-    document.getElementById("ornek-side").classList.remove("show");
-    document.getElementById("ornek-side").classList.add("hidden");
-    document.getElementById("sablon").classList.remove("show");
-    document.getElementById("sablon").classList.add("hidden");
-    document.getElementById("sablon-side").classList.remove("show");
-    document.getElementById("sablon-side").classList.add("hidden");
+const buttons = Array.from(document.getElementsByClassName("c_button"));
+const contents = Array.from(document.getElementsByClassName("menu-content-normal"));
+
+for (var i in buttons) {
+
+    buttons[i].addEventListener("click", function() {
+        var content_id = this.getAttribute("data-content");
+
+        for (var j in contents) {
+            contents[j].classList.add("hidden");
+            contents[j].classList.remove("show");
+        }
+
+        if (content_id == "kurulum") {
+          document.getElementById("kurulum-side").classList.add("show");
+          document.getElementById("kurulum").classList.add("show");
+          document.getElementById("kurulum-side").classList.remove("hidden");
+          document.getElementById("kurulum").classList.remove("hidden");
+        } else if (content_id == "giris") {
+          document.getElementById("giris-side").classList.add("show");
+          document.getElementById("giris").classList.add("show");
+          document.getElementById("giris-side").classList.remove("hidden");
+          document.getElementById("giris").classList.remove("hidden");
+        } else if (content_id == "sablon") {
+          document.getElementById("sablon-side").classList.add("show");
+          document.getElementById("sablon").classList.add("show");
+          document.getElementById("sablon-side").classList.remove("hidden");
+          document.getElementById("sablon").classList.remove("hidden");
+        } else if (content_id == "ornek") {
+          document.getElementById("ornek-side").classList.add("show");
+          document.getElementById("ornek").classList.add("show");
+          document.getElementById("ornek-side").classList.remove("hidden");
+          document.getElementById("ornek").classList.remove("hidden");
+        } else if (content_id == "CPM") {
+          document.getElementById("CPM-side").classList.add("show");
+          document.getElementById("CPM").classList.add("show");
+          document.getElementById("CPM-side").classList.remove("hidden");
+          document.getElementById("CPM").classList.remove("hidden");
+        }
+    });
 }
-
-function dropmenu_giris() {
-  document.getElementById("giris").classList.add("show");
-  document.getElementById("giris-side").classList.add("show");
-  document.getElementById("kurulum").classList.remove("show");
-  document.getElementById("kurulum").classList.add("hidden");
-  document.getElementById("kurulum-side").classList.remove("show");
-  document.getElementById("kurulum-side").classList.add("hidden");
-  document.getElementById("ornek").classList.remove("show");
-  document.getElementById("ornek").classList.add("hidden");
-  document.getElementById("ornek-side").classList.remove("show");
-  document.getElementById("ornek-side").classList.add("hidden");
-  document.getElementById("sablon").classList.remove("show");
-  document.getElementById("sablon").classList.add("hidden");
-  document.getElementById("sablon-side").classList.remove("show");
-  document.getElementById("sablon-side").classList.add("hidden");
-}
-
-function dropmenu_ornek() {
-  document.getElementById("ornek").classList.add("show");
-  document.getElementById("ornek-side").classList.add("show");
-  document.getElementById("kurulum").classList.remove("show");
-  document.getElementById("kurulum").classList.add("hidden");
-  document.getElementById("kurulum-side").classList.remove("show");
-  document.getElementById("kurulum-side").classList.add("hidden");
-  document.getElementById("giris").classList.remove("show");
-  document.getElementById("giris").classList.add("hidden");
-  document.getElementById("giris-side").classList.remove("show");
-  document.getElementById("giris-side").classList.add("hidden");
-  document.getElementById("sablon").classList.remove("show");
-  document.getElementById("sablon").classList.add("hidden");
-  document.getElementById("sablon-side").classList.remove("show");
-  document.getElementById("sablon-side").classList.add("hidden");
-}
-function dropmenu_sablon() {
-  document.getElementById("sablon").classList.add("show");
-  document.getElementById("sablon-side").classList.add("show");
-  document.getElementById("kurulum").classList.remove("show");
-  document.getElementById("kurulum").classList.add("hidden");
-  document.getElementById("kurulum-side").classList.remove("show");
-  document.getElementById("kurulum-side").classList.add("hidden");
-  document.getElementById("giris").classList.remove("show");
-  document.getElementById("giris").classList.add("hidden");
-  document.getElementById("giris-side").classList.remove("show");
-  document.getElementById("giris-side").classList.add("hidden");
-  document.getElementById("ornek").classList.remove("show");
-  document.getElementById("ornek").classList.add("hidden");
-  document.getElementById("ornek-side").classList.remove("show");
-  document.getElementById("ornek-side").classList.add("hidden");
-}
-
-
-
-/*
-$(document).ready(function(){
-  $('.sidebar-link').click(function(){
-      var yeniid = $(this).attr('id');
-      var cizgi = yeniid.indexOf("-");
-      var showid = yeniid.substring(0,cizgi);
-      document.querySelector(showid).classList.add("show");
-  });
-});
-*/

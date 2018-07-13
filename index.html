@@ -2012,9 +2012,103 @@
                             <span class="tag in-line">&lt;p&gt;</span>{{ cevap }}<span class="tag">&lt;/p&gt;</span>
                             <br>
                             <span class="tag">&lt;/div&gt;</span>
-
                         </div>
                     </div>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="aciklama_satiri">&lt;!-- Zaten zengin bir ajax kütüphaneleri ekosistemi olduğundan --&gt;</span>
+                            <br>
+                            <span class="aciklama_satiri">&lt;!-- ve genel amaçlı yardımcı yöntemler koleksiyonları olduğundan, Vue --&gt;</span>
+                            <br>
+                            <span class="aciklama_satiri">&lt;!-- çekirdeği onları yeniden oluşturmayarak küçük kalabilmektir. --&gt;</span>
+                            <br>
+                            <span class="aciklama_satiri">&lt;!-- Bu ayrıca size aşina olduğunuz şeyi kullanma özgürlüğü sunar. --&gt;</span>
+                            <br>
+                            <span class="tag"><&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"</span>&gt;&lt;/script&gt;</span>
+                            <br>
+                            <span class="tag"><&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"</span>&gt;&lt;/script&gt;</span>
+                            <br>
+                            <span class="tag">&lt;script&gt;</span>
+                            <br>
+                            <span class="keyword">var </span>watchExampleVM = <span class="keyword">new </span>Vue({
+                            <br>
+                            <span class="in-line">el: </span><span class="string">'#watch-example'</span>
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">question: <span class="string">''</span>,</span>
+                            <br>
+                            <span class="in-line2">answer: </span><span class="string">'Bir soru sorana kadar sana cevap veremem!'</span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">watch: {</span>
+                            <br>
+                            <span class="in-line2 aciklama_satiri">// soru her değiştiğinde bu işlev çalışacaktır.</span>
+                            <br>
+                            <span class="in-line2">question: <span class="fnc">function</span>(newQuestion, oldQuestion) {</span>
+                            <br>
+                            <span class="in-line3 keyword">this</span>.answer = <span class="string">'Yazmayı durdurmanızı bekliyorum...'</span>
+                            <br>
+                            <span class="in-line3 keyword">this</span>.debouncedGetAnswer()
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">created: </span><span class="fnc">function</span>() {
+                            <br>
+                            <span class="in-line2 keyword">this</span>.debouncedGetAnswer = _.debounce(<span>this</span>.getAnswer, <span class="bit">500</span>)
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">methods: {</span>
+                            <br>
+                            <span class="in-line2">getAnswer: <span class="fnc">function</span>() {</span>
+                            <br>
+                            <span class="in-line3 keyword">if </span>(<span class="keyword">this</span>.question.indexOf(<span class="string">'?'</span>) === <span class="bit">-1</span>) {
+                            <br>
+                            <span class="in-line4 keyword">this</span>.answer = <span class="string">‘Sorular genellikle bir soru işareti içerir. ;-)'</span>
+                            <br>
+                            <span class="in-line4 keyword">return</span>
+                            <br>
+                            <span class="in-line3">}</span>
+                            <br>
+                            <span class="in-line3 keyword">this</span>.answer = <span class="string">'Düşünüyor...'</span>
+                            <br>
+                            <span class="in-line3 keyword">var </span>vm = <span class="keyword">this</span>
+                            <br>
+                            <span class="in-line3">axios.get(<span class="string">'https://yesno.wtf/api'</span>)</span>
+                            <br>
+                            <span class="in-line4">.then(<span class="fnc">function</span>(reponse) {</span>
+                            <br>
+                            <span class="in-line5">vm.answer = _.capitalize(response.data.aswer)</span>
+                            <br>
+                            <span class="in-line4">})</span>
+                            <br>
+                            <span class="in-line4">.catch(<span class="fnc">function</span>(error) {</span>
+                            <br>
+                            <span class="in-line5">vm.answer = <span class="string">‘HATA! API’ye ulaşılamadı! '</span> + error</span>
+                            <br>
+                            <span class="in-line4">})</span>
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                            <br>
+                            <span class="tag">&lt;/script&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                        Bu durumda, <code>watch</code> seçeneğinin kullanılması senkronize olmayan bir işlem yapmamıza 
+                        (bir API'ye erişmemize) izin verir, bu işlemi ne sıklıkta yaptığımızı sınırlar ve son 
+                        cevap elde edene kadar ara sınıflar belirledik.
+                    </p>
+                    <p class="p_text">
+                        <code>watch</code> seçeneğine ek olarak, zorunlu <span class="string">vm.$Watch API</span> 'sini de kullanabilirsiniz.
+                    </p>
                 </div>
             </div>
         </div>

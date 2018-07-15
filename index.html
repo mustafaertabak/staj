@@ -27,7 +27,7 @@
                     <button onmouseover="dropfunction()" class="nav-drop">Öğren</button>
                     <span class="arrow"></span>
                     <div id="dropdown-menu" class="dropdown-content">
-                        <a href="#guide" class="item"><span class="item-on item-show"></span>Kılavuz</a>
+                        <a href="#guide" data-content="guide" class="item c_button"><span class="item-on item-show"></span>Kılavuz</a>
                         <a href="#api" class="item1"><span class="item-on1 item-show"></span>API</a>
                         <a href="#styleguide" class="item2"><span class="item-on2 item-show"></span>Stil Rehberi</a>
                     </div>
@@ -320,6 +320,45 @@
                                 </li>
                                 <li>
                                     <a href="#bilesen-ile-v-for">Bir Bileşen ile v-for</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-content="olay-isleme" class="sidebar-link c_button">Olay İşleme</a>
+                            <ul id="olay-side" class="menu-content-normal">
+                                <li>
+                                    <a href="#olay-dinleyici" class="section-link" data-scroll="">Olay Dinleyicileri</a>
+                                </li>
+                                <li>
+                                    <a href="#Yontem-Olay-Isleyicileri" class="section-link" data-scroll="">Yöntem Olay İşleyicileri</a>
+                                </li>
+                                <li>
+                                    <a href="#Satir-ici-İsleyici-Metotları" class="section-link" data-scroll="">Satır İçi İşleyici-Metotları</a>
+                                </li>
+                                <li>
+                                    <a href="#Olay-Duzenleyicileri" class="section-link" data-scroll="">Olay Düzenleyicileri</a>
+                                </li>
+                                <li>
+                                    <a href="#Tus-Duzenleyicileri" class="section-link" data-scroll="">Tuş Düzenleyicileri</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="#Otomatik-Tus-duzenleyicileri" class="section-link" data-scroll="">Otomatik Tuş Düzenleyicileri</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <a href="#Sistem-Duzenleyici-Tuslar" class="section-link" data-scroll="">Sistem Düzenleyici Tuşlar</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="#exact-Duzenleyicisi" class="section-link" data-scroll="">.exact Düzenleyicisi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Mouse-Dügmesi-Duzenleyicileri" class="section-link" data-scroll="">Mouse Düğmesi Düzenleyici</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <a href="#HTMLde-Neden-Dinleyciler-Var" class="section-link" data-scroll="">HTML de Neden Dinleyiciler Var?</a>
                                 </li>
                             </ul>
                         </li>
@@ -3241,7 +3280,195 @@
                             <span class="tag">&lt;p v-else&gt;</span>Hiç todo Kalmadı!<span class="tag">&lt;/p&gt;</span> 
                         </div>
                     </div>
+                    <h2 id="bilesen-ile-v-for">Bileşen ile <code>v-for</code></h2>
+                    <blockquote>
+                        Bu bölüm <span class="string">Bileşenler</span> hakkında bilgi sahibi olduğunu varsayar. Onu atlamaktan ve daha sonra tekrar 
+                        gelmekten çekinmeyin.
+                    </blockquote>
+                    <p class="p_text">
+                        Herhangi bir normal öğe gibi özel bir bileşen üzerinde doğrudan <code>v-for</code> kullanabilirsiniz:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;my-component v-for=<span class="string">"item in items"</span> :key=<span class="string">"item.id"</span>&gt;&lt;/my-component&gt;</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        2.2.0+ sürümünde, bir bileşenle <code>v-for</code> kullanıldığında, şimdi bir <code>key</code> gereklidir.
+                    </blockquote>
+                    <p class="p_text">
+                        Bununla birlikte, bu bileşenler herhangi bir veriyi otomatik olarak iletmez, 
+                        çünkü bileşenlerin kendilerine ait izole edilmiş kapsamları vardır.Yinelenen 
+                        verileri bileşene aktarmak için ayrıca destek kullanmalıyız:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&lt;my-component</span>
+                            <br>
+                            <span class="tag in-line">v-for=<span class="string">"(item, index) in items"</span></span>
+                            <br>
+                            <span class="tag in-line">v-bind:item=<span class="string">"item"</span></span>
+                            <br>
+                            <span class="tag in-line">v-bind:index=<span class="string">"index"</span></span>
+                            <br>
+                            <span class="tag in-line">v-bind:key=<span class="string">"item.id"</span></span>
+                            <br>
+                            <span class="tag">&gt;&lt;/my-component&gt;</span>
+                        </div>
+                    </div>
+                    <p class="p_text">
+                            Bileşene otomatik olarak <code>item</code> enjekte edilmemesinin nedeni, bileşenin <code>v-for</code> işlevinin 
+                            nasıl çalıştığına sıkı sıkıya bağlı olmasıdır.Verilerinin nereden geldiği konusunda 
+                            açık olmak, bileşeni diğer durumlarda yeniden kullanılabilir hale getirir.
+                    </p>
+                    <p class="p_text">İşte basit bir yapılacaklar listesi için tam bir örnek:</p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class="tag">&div id=<span class="string">"todo-list-example"</span>&gt;</span>
+                            <br>
+                            <span class="in-line tag">&lt;form v-on:submit.prevent=<span class="string">"addNewTodo"</span>&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&lt;lable for=<span class="string">"new-todo"</span>&gt;</span>Bir todo ekle<span class="tag">&lt;/lable&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&lt;input</span>
+                            <br>
+                            <span class="tag in-line3">v-model=<span class="string">"newTodoText"</span></span>
+                            <br>
+                            <span class="tag in-line3">id=<span class="string">"new-todo"</span></span>
+                            <br>
+                            <span class="tag in-line3">placeholder=<span class="string">"E.g. Feed the cat"</span></span>
+                            <br>
+                            <span class="tag in-line2">&gt;</span>
+                            <br>
+                            <span class="tag in-line2">&lt;button&gt;</span>Ekle<span class="tag">&lt;/button&gt;</span>
+                            <br>
+                            <span class="in-line tag">&lt;/form&gt;</span>
+                            <br>
+                            <span class="in-line tag">&lt;ul&gt;</span>
+                            <br>
+                            <span class="in-line2 tag">&lt;li</span>
+                            <br>
+                            <span class="tag in-line3">is=<span class="string">"todo-item"</span></span>
+                            <br>
+                            <span class="tag in-line3">v-for=<span class="string">"(todo, index) in todos"</span></span>
+                            <br>
+                            <span class="tag in-line3">v-bind:key=<span class="string">"todo.id"</span></span>
+                            <br>
+                            <span class="tag in-line3">v-bind:title=<span class="string">"todo.title"</span></span>
+                            <br>
+                            <span class="tag in-line3">v-on:remove=<span class="string">"todos.splice(index, 1)"</span></span>
+                            <br>
+                            <span class="tag in-line2">&gt;&lt;/li&gt;</span>
+                            <br>
+                            <span class="tag in-line">&lt;/ul&gt;</span>
+                            <br>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </div>
+                    </div>
+                    <p class="tip">
+                        <code>is="todo-item"</code> özelliğine dikkat edin.Bu, DOM şablonlarında gereklidir, çünkü bir 
+                        <code>&lt;li&gt;</code> öğesi <code>&lt;ul&gt;</code> içinde geçerlidir. <code>&lt;todo-item&gt;</code> ile aynı şeyi yapar, ancak olası bir 
+                        tarayıcı ayrıştırma hatası etrafında çalışır.Daha fazla bilgi için <span class="string">DOM Şablonu 
+                        Ayrıştırma Uyarıları</span> konusuna bakın.
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            Vue.component(<span class="string">'todo-item'</span>, {
+                            <br>
+                            <span class="in-line">template: <span class="string">'\</span></span>
+                            <br>
+                            <span class="string in-line2">&lt;li&gt;\</span>
+                            <br>
+                            <span class="string in-line3">{{ title }}\</span>
+                            <br>
+                            <span class="string in-line3">&lt;button v-on:click="$emit(\'remove\')"&gt;Remove&lt;/button&gt;\</span>
+                            <br>
+                            <span class="string in-line2">&lt;/li&gt;</span>
+                            <br>
+                            <span class="string in-line">'</span>,
+                            <br>
+                            <span class="in-line">props: [<span class="string">'title'</span>]</span>
+                            <br>
+                            })
+                            <br><br>
+                            <span class="keyword">new </span>Vue({
+                            <br>
+                            <span class="in-line">el: </span><span class="string">'#todo-list-example'</span>,
+                            <br>
+                            <span class="in-line">data: {</span>
+                            <br>
+                            <span class="in-line2">newTodoText: <span class="string">''</span>,</span>
+                            <br>
+                            <span class="in-line2">todos: [</span>
+                            <br>
+                            <span class="in-line3">{</span>
+                            <br>
+                            <span class="in-line4">id: <span class="bit">1</span>,</span>
+                            <br>
+                            <span class="in-line4">title: <span class="string">'Yemekleri yap'</span>,</span>
+                            <br>
+                            <span class="in-line3">},</span>
+                            <br>
+                            <span class="in-line3">{</span>
+                            <br>
+                            <span class="in-line4">id: <span class="bit">2</span>,</span>
+                            <br>
+                            <span class="in-line4">title: <span class="string">'Çöpü çıkart'</span>,</span>
+                            <br>
+                            <span class="in-line3">},</span>
+                            <br>
+                            <span class="in-line3">{</span>
+                            <br>
+                            <span class="in-line4">id: <span class="bit">3</span>,</span>
+                            <br>
+                            <span class="in-line4">title: <span class="string">'Çimleri biç'</span>,</span>
+                            <br>
+                            <span class="in-line3">}</span>
+                            <br>
+                            <span class="in-line2">],</span>
+                            <br>
+                            <span class="in-line2">nextNewTodo: <span class="bit">4</span></span>
+                            <br>
+                            <span class="in-line">},</span>
+                            <br>
+                            <span class="in-line">methods: {</span>
+                            <br>
+                            <span class="in-line2">addNewTodo: <span class="fnc">function</span>() {</span>
+                            <br>
+                            <span class="in-line3 keyword">this</span>.todos.push({
+                            <br>
+                            <span class="in-line4">id: </span><span class="keyword">this</span>.nextTodoId++,
+                            <br>
+                            <span class="in-line4">title: </span><span class="keyword">this</span>.newTodoText
+                            <br>
+                            <span class="in-line3">})</span>
+                            <br>
+                            <span class="in-line3 keyword">this.</span>newTodoText: <span class="string">''</span>
+                            <br>
+                            <span class="in-line2">}</span>
+                            <br>
+                            <span class="in-line">}</span>
+                            <br>
+                            })
+                        </div>
+                    </div>
+
                 </div>
+                <div id="olay" class="menu-content-normal olay-isleme">
+                    <h1>Olay İşleme</h1>
+                    <h2 id="olay-dinleyici">Olayları Dinlemek</h2>
+                    <p class="p_text">
+                        DOM etkinliklerini dinlemek ve tetiklendiğinde bazı JavaScript'leri çalıştırmak için <code>v-on</code> yönergesini kullanabiliriz. 
+                        Örneğin:
+                    </p>
+                    <div class="table">
+                        <div class="tbody">
+                            <span class=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="js/jquery-3.3.1.js" type="text/javascript"></script>

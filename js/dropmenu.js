@@ -51,6 +51,16 @@ for (var i in buttons) {
           document.getElementById("Liste").classList.add("show");
           document.getElementById("Liste-side").classList.remove("hidden");
           document.getElementById("Liste").classList.remove("hidden");
+        } else if (content_id == "olay-isleme") {
+          document.getElementById("olay-side").classList.add("show");
+          document.getElementById("olay").classList.add("show");
+          document.getElementById("olay-side").classList.remove("hidden");
+          document.getElementById("olay").classList.remove("hidden");
+        } else if (content_id == "guide") {
+          document.getElementById("kurulum-side").classList.add("show");
+          document.getElementById("kurulum").classList.add("show");
+          document.getElementById("kurulum-side").classList.remove("hidden");
+          document.getElementById("kurulum").classList.remove("hidden");
         }
     });
 }

@@ -95,3 +95,72 @@ var vm = new Vue({
       }
     }
   })
+
+/* 10-DEMO UYGULAMASI app-10 */
+
+var example1 = new Vue({
+    el: '#example-1',
+    data: {
+      items: [
+        { message: 'Foo' },
+        { message: 'Bar' }
+      ]
+    }
+  })
+
+/* 11-DEMO UYGULAMASI app-11 */
+
+var example2 = new Vue({
+    el: '#example-2',
+    data: {
+        parentMessage: 'Parent',
+        items: [
+            { message: 'Foo' },
+            { message: 'Bar' }
+        ]
+    }
+})
+
+/* 12-DEMO UYGULAMASI app-12 */
+new Vue({
+    el: '#v-for-object',
+    data: {
+      object: {
+        isim: 'John',
+        soyisim: 'Doe',
+        yas: 30
+      }
+    }
+  })
+
+/* 13-DEMO UYGULAMASI app-13 */
+
+  new Vue({
+    el: '#v-for-object-value-key',
+    data: {
+        object: {
+            isim: 'John',
+            soyisim: 'Doe',
+            yas: 30
+        }
+    }
+})
+  
+/* 14-DEMO UYGULAMASI app-14 */
+
+new Vue({
+    el: '#v-for-object-value-key-index',
+    data: {
+        object: {
+            isim: 'John',
+            soyisim: 'Doe',
+            yas: 30
+        }
+    }
+})
+  
+/* 15-DEMO UYGULAMASI app-15 */
+
+new Vue({ 
+    el: '#range' 
+})

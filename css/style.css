@@ -350,6 +350,11 @@ code {
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px; }
 
+blockquote {
+  margin: 2em 0;
+  padding-left: 20px;
+  border-left: 4px solid #42b983; }
+
 .button {
   font-size: 0.9em;
   color: #fff;
@@ -443,6 +448,12 @@ td, th {
 /* ---------------Terimler------------------- */
 .li_p {
   padding-bottom: 20px; }
+
+.li_m {
+  margin-bottom: 7px; }
+
+.ol_pl {
+  padding-left: 22px; }
 
 /* -----------------Terimler ----------------- */
 /* Code renklendirme sınıfları tasarımlar ve sairler. */

@@ -36,6 +36,21 @@ for (var i in buttons) {
           document.getElementById("CPM").classList.add("show");
           document.getElementById("CPM-side").classList.remove("hidden");
           document.getElementById("CPM").classList.remove("hidden");
+        } else if (content_id == "SSB") {
+          document.getElementById("SSB-side").classList.add("show");
+          document.getElementById("SSB").classList.add("show");
+          document.getElementById("SSB-side").classList.remove("hidden");
+          document.getElementById("SSB").classList.remove("hidden");
+        } else if (content_id == "Kosullu") {
+          document.getElementById("Kosullu-side").classList.add("show");
+          document.getElementById("Kosullu").classList.add("show");
+          document.getElementById("Kosullu-side").classList.remove("hidden");
+          document.getElementById("Kosullu").classList.remove("hidden");
+        } else if (content_id == "Liste") {
+          document.getElementById("Liste-side").classList.add("show");
+          document.getElementById("Liste").classList.add("show");
+          document.getElementById("Liste-side").classList.remove("hidden");
+          document.getElementById("Liste").classList.remove("hidden");
         }
     });
 }
